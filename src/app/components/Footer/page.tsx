@@ -6,7 +6,8 @@ import {
   FaLinkedin,
   FaTwitter,
   FaInstagram,
-  FaAndroid
+  FaAndroid,
+  FaYoutube
   // FaHashnode, // Removed as it is not a valid export
 } from "react-icons/fa";
 
@@ -14,27 +15,32 @@ const socials = [
   {
     name: "GitHub",
     icon: <FaGithub />,
-    href: "https://github.com/yourusername",
+    href: "https://github.com/annuk123",
   },
   {
     name: "BioLink",
     icon: <FaAndroid />, // Removed as it is not a valid export
-    href: "https://hashnode.com/@yourusername",
+    href: "https://bio.link/annukumalu",
   },
   {
     name: "LinkedIn",
     icon: <FaLinkedin />,
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/annu-kumari-540337237/",
   },
   {
     name: "Twitter",
     icon: <FaTwitter />,
-    href: "https://twitter.com/yourusername",
+    href: "https://x.com/Annu66126617",
   },
   {
     name: "Instagram",
     icon: <FaInstagram />,
-    href: "https://instagram.com/yourusername",
+    href: "https://www.instagram.com/annuk987/",
+  },
+  {
+    name: "YouTube",
+    icon: <FaYoutube />,
+    href: "https://www.youtube.com/channel/UC3wYJlVEy9cMi5e_sZG-Q7Q",
   },
 ];
 
@@ -48,7 +54,7 @@ export default function Footer() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <p className="text-center sm:text-left text-gray-600 dark:text-gray-400 text-sm">
+        <p className="text-center sm:text-left text-gray-600 dark:text-gray-400">
           © {new Date().getFullYear()} Annu Kumari — Built with ❤️ using Next.js
         </p>
 

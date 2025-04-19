@@ -13,7 +13,7 @@ export default function Blog() {
 >
   <span className="text-5xl animate-wiggle">📝</span>
   <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
-    My Blog
+    My Blogs
   </span>
 </motion.h2>
 
