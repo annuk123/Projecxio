@@ -3,13 +3,13 @@ import About from "./components/about/page";
 import Footer from "./components/Footer/page";
 import TechStack from "./components/techstack/page";
 import Navbar from "./components/navbar/page";
-import WaveDivider from "./components/wavydivider/page";
 import BlobDivider from "./components/blobdivider/blob";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import FootDivider from "./components/footdiv/foot";
 import Reveal from "./components/reveal/reveal";
+import Hero from "./components/hero/page";
 
 const titles = [
   "I'm Annu Kumari",
@@ -125,9 +125,9 @@ export default function Home() {
 
       <BlobDivider flip fillColor="#000000" />
       {/* <WaveDivider /> */}
-      <section className="w-full relative z-10 py-10 bg-black">
+      <section className="w-full relative z-10 py-4 bg-black">
         <Reveal>
-        <WaveDivider />
+        <Hero />
         </Reveal>
       </section>
 

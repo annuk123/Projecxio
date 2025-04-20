@@ -24,11 +24,18 @@ export default function About() {
           transition={{ delay: 0.2, duration: 1 }}
           viewport={{ once: true }}
         >
-          I&apos;m a passionate Frontend Developer who thrives at the intersection of creativity and performance.
-          I specialize in building modern, elegant UIs with frameworks like <span className="font-semibold text-purple-600 dark:text-purple-400">React, Next.js</span> and tools like <span className="font-semibold text-blue-600 dark:text-blue-400">Tailwind CSS, Framer Motion</span>.
-          Currently working on <span className="italic">Codexio</span> — a portfolio and digital playground to showcase my skills, experiments, and products.
+          I&apos;m a passionate a Full Stack Developer who weaves code into elegant expressions of
+          purpose and thrives at the intersection of creativity and performance.
+          I specialize in building modern, elegant UIs with frameworks like <span className="font-semibold text-purple-600 dark:text-purple-400">React, Next.js</span> and tools like <span className="font-semibold text-blue-600 dark:text-blue-400">Tailwind CSS, Framer Motion, Shadcn</span>.
+
+  I believe that great design whispers and great code answers — together, they create
+  harmony. I&apos;m currently diving into Data Structures & Algorithms with JavaScript, building robust full stack projects
+  that breathe life into ideas, and exploring the realm of DevOps to bring development and deployment closer than ever.
+
+
+
           <br /><br />
-          I’m a night owl coder ✨ who loves smooth animations, pixel-perfect design, and pushing the boundaries of web experiences.
+          I&apos;m a night owl coder ✨ who loves smooth animations, pixel-perfect design, and pushing the boundaries of web experiences.
         </motion.p>
       </section>
 

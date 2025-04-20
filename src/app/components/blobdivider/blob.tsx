@@ -10,7 +10,8 @@ export default function BlobDivider({
   fillColor = "#000000",
 }: BlobDividerProps) {
   return (
-    <div className="overflow-hidden leading-none relative mb-0">
+    <div className="overflow-hidden leading-none relative mb-0 ">
+      
       <svg
         viewBox="0 0 1440 320"
         className={`w-full h-[150px] ${flip ? "" : "rotate-180"}`}
@@ -21,6 +22,7 @@ export default function BlobDivider({
           fill={fillColor}
         />
       </svg>
+
     </div>
   );
 }
