@@ -22,7 +22,7 @@ const WaveDivider = () => {
       </div>
 
       {/* Content */}
-      <section className="min-h-screen flex flex-col items-center justify-center  dark:from-black dark:via-gray-900 dark:to-black text-center px-6">
+      <section className="min-h-screen flex flex-col items-center justify-center  dark:from-black dark:via-gray-900 dark:to-black text-center ">
       {/* Main Intro Section */}
       <motion.main
         initial={{ opacity: 0, y: 40 }}

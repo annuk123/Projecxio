@@ -124,7 +124,12 @@ export default function Home() {
       </section>
 
       <BlobDivider flip fillColor="#000000" />
-      <WaveDivider />
+      {/* <WaveDivider /> */}
+      <section className="w-full relative z-10 py-10 bg-black">
+        <Reveal>
+        <WaveDivider />
+        </Reveal>
+      </section>
 
       {/* Other Sections */}
 
