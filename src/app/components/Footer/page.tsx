@@ -46,7 +46,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 px-6 sm:px-12 lg:px-24 py-10  border-t border-gray-200 dark:border-gray-800 ">
+    <footer className="relative z-10 px-6 sm:px-12 lg:px-24 py-10 mt-15  bg-black border-b border-gray-900 dark:border-gray-800 ">
       <motion.div
         className="flex flex-col sm:flex-row justify-between items-center gap-6"
         initial={{ opacity: 0, y: 40 }}
@@ -54,7 +54,7 @@ export default function Footer() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <p className="text-center sm:text-left text-gray-600 dark:text-gray-400">
+        <p className="text-center sm:text-left bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent  dark:text-gray-400">
           © {new Date().getFullYear()} Annu Kumari — Built with ❤️ using Next.js
         </p>
 
@@ -78,3 +78,4 @@ export default function Footer() {
     </footer>
   );
 }
+

@@ -1,15 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Navbar from "../navbar/page";
 
 export default function Blog() {
   return (
+    // <section className="relative z-10">
+      // <Navbar />
+
     <section className="max-w-7xl mx-auto w-full px-6 sm:px-12 md:px-20 py-16">
+       <Navbar />
 <motion.h2
   initial={{ opacity: 0, y: 50, scale: 0.95 }}
   animate={{ opacity: 1, y: 0, scale: 1 }}
   transition={{ duration: 0.8, ease: "easeOut", type: "spring", stiffness: 100 }}
-  className="text-4xl sm:text-5xl font-extrabold text-center mb-10 drop-shadow-md flex justify-center items-center gap-3"
+  className="text-4xl sm:text-5xl font-extrabold text-center mb-10 drop-shadow-md flex justify-center items-center gap-3 py-13" 
 >
   <span className="text-5xl animate-wiggle">📝</span>
   <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">

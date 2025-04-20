@@ -1,13 +1,15 @@
 "use client";
-import Hero from "./components/hero/page";
 import About from "./components/about/page";
 import Footer from "./components/Footer/page";
 import TechStack from "./components/techstack/page";
 import Navbar from "./components/navbar/page";
-
-
+import WaveDivider from "./components/wavydivider/page";
+import BlobDivider from "./components/blobdivider/blob";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import FootDivider from "./components/footdiv/foot";
+import Reveal from "./components/reveal/reveal";
 
 const titles = [
   "I'm Annu Kumari",
@@ -47,89 +49,104 @@ function TypewriterText({ texts }: { texts: string[] }) {
       return;
     }
 
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (deleting ? -1 : 1));
-    }, deleting ? 40 : 100);
+    const timeout = setTimeout(
+      () => {
+        setSubIndex((prev) => prev + (deleting ? -1 : 1));
+      },
+      deleting ? 40 : 100
+    );
 
     return () => clearTimeout(timeout);
   }, [subIndex, deleting, index, texts]);
 
   return (
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500 ">
       {texts[index].substring(0, subIndex)}
-      <span className={`ml-1 ${blink ? 'border-r-2 border-fuchsia-500' : ''}`} />
+      <span
+        className={`ml-1 ${blink ? "border-r-2 border-fuchsia-500" : ""}`}
+      />
     </span>
   );
 }
 
-
 export default function Home() {
   return (
-    // <div className="flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-white via-violet-50 to-pink-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900">
     <div className="relative flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-white via-rose-50 to-violet-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 transition-colors duration-500">
-      {/* Background Particles */}
-
       {/* Navbar */}
       <Navbar />
       {/* Animated or Static Blobs in Background */}
 
-
       {/* Hero Section with Typewriter */}
-      <section className="flex flex-col items-center justify-center text-center w-full px-6 sm:px-12 lg:px-24 py-50">
-        <motion.h1
-          className="text-4xl sm:text-6xl font-extrabold leading-tight mb-6 text-black dark:text-white"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <TypewriterText texts={titles} />
-        </motion.h1>
+      <section className="flex flex-col items-center justify-center text-center w-full px-6 sm:px-12 lg:px-24 py-30 ">
+        <Reveal>
+          <motion.h1
+            className="text-4xl sm:text-6xl font-extrabold leading-tight mb-6 text-black dark:text-white overflow-hidden min-h-[3.5rem] sm:min-h-[4.5rem]"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <div className="w-[280px] sm:w-[900px] mx-auto text-center whitespace-nowrap overflow-hidden -top-30">
+              <TypewriterText texts={titles} />
+            </div>
+          </motion.h1>
 
-        <motion.p
-          className="max-w-xl text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-        >
-          Crafting beautiful web interfaces with React, Next.js, Tailwind CSS, and beyond.
-        </motion.p>
+          <motion.p
+            className="max-w-xl text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 text-center mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            Crafting beautiful web interfaces with React, Next.js, Tailwind CSS,
+            and beyond.
+          </motion.p>
 
-        <motion.div
-          className="flex flex-wrap justify-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-        >
-          <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300">
-            View Projects
-          </button>
-          <button className="px-6 py-3 rounded-xl bg-white dark:bg-gray-900 text-purple-600 dark:text-purple-400 border border-purple-600 dark:border-purple-400 font-semibold shadow hover:scale-105 transition-all duration-300">
-            Download Resume
-          </button>
-        </motion.div>
+          <motion.div
+            className="flex flex-wrap justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300">
+              View Projects
+            </button>
+
+            <Link
+              href="/FrontendResume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="px-6 py-3 rounded-xl bg-white dark:bg-gray-900 text-purple-600 dark:text-purple-400 border border-purple-600 dark:border-purple-400 font-semibold shadow hover:scale-105 transition-all duration-300">
+                Download Resume
+              </button>
+            </Link>
+          </motion.div>
+        </Reveal>
       </section>
 
-      {/*  <button className="px-6 py-3 rounded-xl bg-white dark:bg-gray-900 text-purple-600 dark:text-purple-400 border border-purple-600 dark:border-purple-400 font-semibold shadow hover:scale-105 transition-all duration-300">
-            Download Resume
-          </button> please add handle show that user can download Resume also after clicking on download resume button */}
+      <BlobDivider flip fillColor="#000000" />
+      <WaveDivider />
 
       {/* Other Sections */}
-      <section className="w-full px-6 sm:px-12 lg:px-24 ">
-        <Hero />
-      </section>
 
-      <section className="w-full px-6 sm:px-12 lg:px-24 ">
-        <About />
+      <section className="w-full px-6 sm:px-12 lg:px-24  mt-12">
+        <Reveal>
+          <About />
+        </Reveal>
       </section>
 
       <section className="w-full px-6 sm:px-12 lg:px-24 py-20">
-        <TechStack />
+        <Reveal>
+          <TechStack />
+        </Reveal>
       </section>
 
-      <footer className="w-full px-6 sm:px-12 lg:px-24 py-12">
-        <Footer />
+      <FootDivider flip fillColor="#000000" />
+
+      <footer className="w-full relative z-10 py-10 bg-black">
+        <Reveal>
+          <Footer />
+        </Reveal>
       </footer>
     </div>
   );
 }
-

@@ -8,7 +8,7 @@ export default function About() {
     <>
       <section className="w-full min-h-screen bg-white dark:bg-black text-black dark:text-white px-6 sm:px-16 py-24 flex flex-col items-center justify-center">
         <motion.h2
-          className="text-4xl sm:text-5xl font-bold mb-8 text-center"
+          className="text-4xl sm:text-5xl bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent font-extrabold  mb-8 text-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
