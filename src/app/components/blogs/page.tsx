@@ -37,7 +37,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/java.jpeg"
+            src="/assets/java.jpeg"
             alt="Blog Post 1"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -76,7 +76,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/javascript.webp"
+            src="/assets/javascript.webp"
             alt="Blog Post 2"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -115,7 +115,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/javascript1.png"
+            src="/assets/javascript1.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -155,7 +155,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/control.png"
+            src="/assets/control.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -195,7 +195,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/function.png"
+            src="/assets/function.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -234,7 +234,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/linear.png"
+            src="/assets/linear.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -273,7 +273,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/linear2.png"
+            src="/assets/linear2.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -312,7 +312,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/array.png"
+            src="/assets/array.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -351,7 +351,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/json.png"
+            src="/assets/json.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -390,7 +390,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/docker.webp"
+            src="/assets/docker.webp"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -429,7 +429,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/arch.webp"
+            src="/assets/arch.webp"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -468,7 +468,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/network.jpeg"
+            src="/assets/network.jpeg"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -507,7 +507,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/next.jpeg"
+            src="/assets/next.jpeg"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -546,7 +546,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/next1.webp"
+            src="/assets/next1.webp"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -585,7 +585,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/tailwind.png"
+            src="/assets/tailwind.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -624,7 +624,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/npm.png"
+            src="/assets/npm.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -663,7 +663,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/nexts.png"
+            src="/assets/nexts.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -702,7 +702,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/type.png"
+            src="/assets/type.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -741,7 +741,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/block.png"
+            src="/assets/block.png"
             alt="Blog Post 3"
              className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
