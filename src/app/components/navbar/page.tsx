@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
             {/* Logo */}
-           <Link href="/" > 
+           {/* <Link href="/" > 
           <motion.div
             className="text-3xl font-black bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent tracking-tight"
             initial={{ opacity: 0, x: -30 }}
@@ -43,7 +43,29 @@ export default function Navbar() {
           >
             Codexio
           </motion.div>
-          </Link>
+          </Link> */} 
+          <Link href="/" className="flex items-center space-x-3">
+  <motion.div
+    className="w-10 h-10 rounded-full overflow-hidden border-2 border-purple-400"
+    initial={{ opacity: 0, x: -30 }}
+    animate={{ opacity: 1, x: 0 }}
+  >
+    <img
+      src="/assets/logo.png" // Replace with your image path
+      alt="Codexio Logo"
+      className="w-full h-full object-cover"
+    />
+  </motion.div>
+
+  <motion.div
+    className="text-3xl font-black bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent tracking-tight"
+    initial={{ opacity: 0, x: -30 }}
+    animate={{ opacity: 1, x: 0 }}
+  >
+    Codexio
+  </motion.div>
+</Link>
+
 
           <div className="hidden md:flex space-x-8">
             {navLinks.map(({ href, label }) => (
