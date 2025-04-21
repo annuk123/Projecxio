@@ -174,28 +174,28 @@ const projectsData = {
       {
         title: "Eloqu AI",
         tech: "Next.js, TypeScript, Convex, Novel Editor",
-        description: "A blogging app with AI-enhanced features.",
+        description: "",
         image: "/assets/come.avif",
         link: "#"
       },
       {
         title: "Chain Nova",
         tech: "Next.js, Sonar API",
-        description: "Blockchain UI library app.",
+        description: "",
         image: "/assets/come.avif",
         link: "#"
       },
       {
         title: "AlgoFlow",
         tech: "Next.js, NeonDB",
-        description: "Visualize LeetCode problems step-by-step.",
+        description: "",
         image: "/assets/come.avif",
         link: "#"
       },
       {
         title: "Hearo",
         tech: "Next.js, Convex, Sonar API",
-        description: "Hearo is a modern, real-time music trivia game where players test their ears by listening to short song clips and guessing the singer, movie, or song title.",
+        description: "",
         image: "/assets/come.avif",
         link: "#"
       },
