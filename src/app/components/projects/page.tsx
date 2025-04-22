@@ -137,22 +137,50 @@ const SectionTitle = ({ title }: { title: string }) => (
 );
 
 const projectsData = {
-//   frontend: [
-//     {
-//       title: "Portfolio Website",
-//       tech: "HTML, CSS, JS",
-//       description: "My first custom responsive website.",
-//       image: "/projects/portfolio.png",
-//       link: "https://codexio.dev"
-//     },
-//     {
-//       title: "CSS Art Gallery",
-//       tech: "HTML, CSS",
-//       description: "Pure CSS art showcase.",
-//       image: "/projects/css-art.png",
-//       link: "https://your-css-art.live"
-//     },
-//   ],
+  frontend: [
+    {
+      title: "Pikify",
+      tech: "HTML, CSS, JS",
+      description: "Wallpaper world with High resolution images.",
+      video: "/videos/pikify.mp4",
+      link: "https://gallary-photoshop.vercel.app/"
+    },
+    {
+      title: "My Blog",
+      tech: "HTML, CSS, Js",
+      description: "Pure CSS art showcase.",
+      video: "/videos/blog.mp4",
+      link: "https://blog-y9y4.vercel.app/"
+    },
+    {
+      title: "My Music",
+      tech: "HTML, CSS, Js",
+      description: "Pure CSS art showcase.",
+      video: "/videos/music.mp4",
+      link: "https://music-player-annu.vercel.app/"
+    },
+    {
+      title: "Gift Shop",
+      tech: "HTML, CSS, Js",
+      description: "Pure CSS art showcase.",
+      video: "/videos/gift.mp4",
+      link: "https://gift-shop-annu.netlify.app/"
+    },
+    {
+      title: "Registration Form",
+      tech: "HTML, CSS",
+      description: "Pure CSS art showcase.",
+      video: "/videos/form.mp4",
+      link: "https://registration-form-rosy.vercel.app/"
+    },
+    {
+      title: "Merry Christmas",
+      tech: "HTML, CSS",
+      description: "Pure CSS art showcase.",
+      video: "/videos/merry.mp4",
+      link: "https://merry-christmas-using-html-css.vercel.app/"
+    },
+  ],
   fullstack: {
     available: [
       {
@@ -259,12 +287,12 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen w-full py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900">
       <Navbar />
-      {/* <SectionTitle title="Frontend Projects" />
+      <SectionTitle title="Frontend Projects" />
       <div className="flex flex-wrap gap-6 justify-center mb-16">
         {projectsData.frontend.map((p, i) => (
           <ProjectCard key={p.title} {...p} i={i} />
         ))}
-      </div> */}
+      </div>
 
       <SectionTitle title="Full Stack Projects" />
 
