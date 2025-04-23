@@ -1,8 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-
-  
+import { motion } from "framer-motion";  
 export default function About() {
   return (
     <>
@@ -35,7 +33,7 @@ export default function About() {
 
 
           <br /><br />
-          I&apos;m a night owl coder ✨ who loves smooth animations, pixel-perfect design, and pushing the boundaries of web experiences.
+          I&apos;m a night owl coder who loves smooth animations, pixel-perfect design, and pushing the boundaries of web experiences.
         </motion.p>
       </section>
 
