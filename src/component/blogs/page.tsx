@@ -5,8 +5,6 @@ import Navbar from "../navbar/page";
 
 export default function Blog() {
   return (
-    // <section className="relative z-10">
-      // <Navbar />
 
     <section className="max-w-7xl mx-auto w-full px-6 sm:px-12 md:px-20 py-16">
        <Navbar />

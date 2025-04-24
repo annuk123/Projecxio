@@ -1,15 +1,15 @@
 "use client";
-import About from "./components/about/page";
-import Footer from "./components/Footer/page";
-import TechStack from "./components/techstack/page";
-import Navbar from "./components/navbar/page";
-import BlobDivider from "./components/blobdivider/blob";
+import About from "../component/about/page";
+import Footer from "../component/Footer/page";
+import TechStack from "../component/techstack/page";
+import Navbar from "../component/navbar/page";
+import BlobDivider from "../component/blobdivider/blob";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import FootDivider from "./components/footdiv/foot";
-import Reveal from "./components/reveal/reveal";
-import Hero from "./components/hero/page";
+import FootDivider from "../component/footdiv/foot";
+import Reveal from "../component/reveal/reveal";
+import Hero from "../component/hero/page";
 
 const titles = [
   "I'm Annu Kumari",
@@ -127,7 +127,7 @@ export default function Home() {
       {/* <WaveDivider /> */}
       <section className="w-full relative z-10 py-4 bg-black">
         <Reveal>
-        <Hero />
+          <Hero />
         </Reveal>
       </section>
 
