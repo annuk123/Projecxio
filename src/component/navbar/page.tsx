@@ -1,29 +1,31 @@
 "use client";
-import { useState, useEffect } from "react"
-import { Moon, Sun, Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react";
+import { Moon, Sun, Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+
 
 // const navLinks = ["Home", "About", "Projects", "Contact"]
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/components/about", label: "About" },
-  { href: "/components/projects", label: "Projects" },
-  { href: "/components/contact", label: "Contact" },
-  { href: "/components/blogs", label: "Blogs" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
+  { href: "/blogs", label: "Blogs" },
 ];
 
+
 export default function Navbar() {
-  const [isDark, setIsDark] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isDark, setIsDark] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isDark) {
-      document.documentElement.classList.add("dark")
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark")
+      document.documentElement.classList.remove("dark");
     }
-  }, [isDark])
+  }, [isDark]);
 
   return (
     <motion.nav
@@ -34,8 +36,8 @@ export default function Navbar() {
     >
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-           {/* <Link href="/" > 
+          {/* Logo */}
+          {/* <Link href="/" > 
           <motion.div
             className="text-3xl font-black bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent tracking-tight"
             initial={{ opacity: 0, x: -30 }}
@@ -43,29 +45,28 @@ export default function Navbar() {
           >
             Codexio
           </motion.div>
-          </Link> */} 
+          </Link> */}
           <Link href="/" className="flex items-center space-x-3">
-  <motion.div
-    className="w-10 h-10 rounded-full overflow-hidden border-2 border-purple-400"
-    initial={{ opacity: 0, x: -30 }}
-    animate={{ opacity: 1, x: 0 }}
-  >
-    <img
-      src="/assets/logo.png" // Replace with your image path
-      alt="Codexio Logo"
-      className="w-full h-full object-cover"
-    />
-  </motion.div>
+            <motion.div
+              className="w-10 h-10 rounded-full overflow-hidden border-2 border-purple-400"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+            >
+              <img
+                src="/assets/logo.png" // Replace with your image path
+                alt="Codexio Logo"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
 
-  <motion.div
-    className="text-3xl font-black bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent tracking-tight"
-    initial={{ opacity: 0, x: -30 }}
-    animate={{ opacity: 1, x: 0 }}
-  >
-    Codexio
-  </motion.div>
-</Link>
-
+            <motion.div
+              className="text-3xl font-black bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent tracking-tight"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+            >
+              Codexio
+            </motion.div>
+          </Link>
 
           <div className="hidden md:flex space-x-8">
             {navLinks.map(({ href, label }) => (
@@ -75,7 +76,9 @@ export default function Navbar() {
                 className="relative text-sm font-medium text-gray-700 dark:text-gray-300 group"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="group-hover:text-purple-500 transition-colors duration-300">{label}</span>
+                <span className="group-hover:text-purple-500 transition-colors duration-300">
+                  {label}
+                </span>
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
               </motion.a>
             ))}
@@ -126,5 +129,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </motion.nav>
-  )
+  );
 }

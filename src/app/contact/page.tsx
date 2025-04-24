@@ -124,7 +124,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
 import { toast } from "sonner";
-import Navbar from "../navbar/page";
+import Navbar from "@/component/navbar/page";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("mblgngkk");

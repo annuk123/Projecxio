@@ -1,15 +1,15 @@
 "use client";
-import About from "../component/about/page";
-import Footer from "../component/Footer/page";
-import TechStack from "../component/techstack/page";
+import About from "./about/page";
+import Footer from "./Footer/page";
+import TechStack from "./techstack/page";
 import Navbar from "../component/navbar/page";
-import BlobDivider from "../component/blobdivider/blob";
+import BlobDivider from "./blobdivider/blob";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import FootDivider from "../component/footdiv/foot";
-import Reveal from "../component/reveal/reveal";
-import Hero from "../component/hero/page";
+import FootDivider from "./footdiv/foot";
+import Reveal from "./reveal/reveal";
+import Hero from "./hero/page";
 
 const titles = [
   "I'm Annu Kumari",
