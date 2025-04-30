@@ -37,7 +37,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/java.jpeg"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996568/aj7nyek6pq8d7pgtrpsu.jpg"
             alt="Blog Post 1"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -77,7 +77,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/javascript.webp"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996568/wmjptoyjvlnah3mfe0nr.png"
             alt="Blog Post 2"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -118,7 +118,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/javascript1.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996568/njnvwdatleicpulw3v3g.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -160,7 +160,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/control.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996571/qoqx4kfyugmyb5nejykb.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -201,7 +201,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/function.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996570/sltsdh8hwgizleybiusl.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -243,7 +243,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/linear.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996568/hxsqhjzmxmwpquda3g1d.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -284,7 +284,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/linear2.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996566/tsrza55hajafgd9bqtct.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -325,7 +325,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/array.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996573/gz4isne6oogeymxcfeno.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -366,7 +366,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/json.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996566/sku9chxh1sigf99jmbso.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -408,7 +408,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/docker.webp"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996569/csntxlpde3qsdx64j2dk.webp"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -450,7 +450,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/arch.webp"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996571/rzhcex8wystzjcg07aqm.webp"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -492,7 +492,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/network.jpeg"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996564/hjhvdniyg394wsoxhmwu.jpg"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -534,7 +534,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/next.jpeg"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996559/vy9t0xe3ro61lveftxhf.jpg"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -577,7 +577,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/next1.webp"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996561/p3clm92awoq0r2ladr0t.webp"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -620,7 +620,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/tailwind.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996561/nng3w2gfeqtpqall7zie.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -662,7 +662,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/npm.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996562/ce1tu9xmuiijzaajj0qo.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -704,7 +704,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/nexts.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996567/sme2mqjdxpsfoo9rpnvt.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -746,7 +746,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/type.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996562/ahomqtlyouopd0hjcnwl.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}
@@ -789,7 +789,7 @@ export default function Blog() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden transition-all transform hover:shadow-2xl"
         >
           <motion.img
-            src="/assets/block.png"
+            src="https://res.cloudinary.com/dpiobntr2/image/upload/v1745996586/r106fzylbltqqptpoape.png"
             alt="Blog Post 3"
             className="w-full h-48 object-cover transform transition-all hover:scale-110"
             initial={{ opacity: 0 }}

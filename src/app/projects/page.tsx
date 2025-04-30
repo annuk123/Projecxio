@@ -1,107 +1,10 @@
-
-
-// "use client";
-// import { motion } from "framer-motion";
-// import { Card, CardContent } from "@/components/ui/card";
-// import Navbar from "../navbar/page";
-
-// const fadeUp = {
-//   hidden: { opacity: 0, y: 40 },
-//   visible: (i: number) => ({
-//     opacity: 1,
-//     y: 0,
-//     transition: { delay: i * 0.2, duration: 0.6 },
-//   }),
-// };
-
-// const SectionTitle = ({ title }: { title: string }) => (
-//   <motion.h2
-//     className="text-3xl sm:text-4xl py-15 font-bold mb-8 text-center text-gray-800 dark:text-white"
-//     initial="hidden"
-//     whileInView="visible"
-//     viewport={{ once: true }}
-//     variants={fadeUp}
-//     custom={0}
-//   >
-//     {title}
-//   </motion.h2>
-// );
-
-// const projectsData = {
-//   frontend: [
-//     { title: "Portfolio Website", tech: "HTML, CSS, JS", description: "My first custom responsive website." },
-//     { title: "CSS Art Gallery", tech: "HTML, CSS", description: "Pure CSS art showcase." },
-//   ],
-//   fullstack: {
-//     available: [
-//       { title: "Qflows", tech: "Next.js, TypeScript, NeonDB, Prisma Orm", description: "A Advanced Code Visualizer App where user can Visualize their code step-by-step in any Programing languages" },
-//       { title: "Crisis Sync", tech: "Next.js, Django, Postgresql", description: "A Website for detecting real time disaster from social and find is it really happen there or not" },
-//     ],
-//     comingSoon: [
-//       { title: "Eloqu AI", tech: "Next.js, TypeScript, Convex, Novel Editor", description: "A Advanced Blogging App with AI Integration" },
-//       { title: "Chain Nova", tech: "Next.js, Sonar API", description: "A Blockchain UI Library App" },
-//       { title: "AlgoFlow", tech: "Next.js, NeonDB", description: "This is for, where user can Visualize Leetcode DSA Problem solution step-by-step and also they can Practice there" },
-//       { title: "EchoQuest", tech: "Next.js, Convex, Sonar API", description: "Hackathon health dashboard app." },
-//     ],
-//   },
-// };
-
-// const ProjectCard = ({ title, tech, description, i }: any) => (
-//   <motion.div
-//     className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33%-1.5rem)]"
-//     custom={i}
-//     variants={fadeUp}
-//     initial="hidden"
-//     whileInView="visible"
-//     viewport={{ once: true }}
-//   >
-//     <Card className="rounded-2xl p-4 bg-white/30 dark:bg-zinc-900/30 backdrop-blur shadow-md border border-zinc-200 dark:border-zinc-800 hover:scale-[1.02] transition-transform">
-//       <CardContent>
-//         <h3 className="text-xl font-semibold mb-2 text-zinc-800 dark:text-zinc-100">{title}</h3>
-//         <p className="text-sm mb-2 text-zinc-500 dark:text-zinc-400">{tech}</p>
-//         <p className="text-sm text-zinc-700 dark:text-zinc-300">{description}</p>
-//       </CardContent>
-//     </Card>
-//   </motion.div>
-// );
-
-// export default function ProjectsPage() {
-//   return (
-//     <main className="min-h-screen w-full py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900">
-//         <Navbar />
-//       <SectionTitle title="Frontend Projects" />
-//       <div className="flex flex-wrap gap-6 justify-center mb-16">
-//         {projectsData.frontend.map((p, i) => (
-//           <ProjectCard key={p.title} {...p} i={i} />
-//         ))}
-//       </div>
-
-//       <SectionTitle title="Full Stack Projects" />
-
-//       <h3 className="text-2xl font-bold mb-4 text-center text-purple-600 dark:text-purple-400">Available Projects</h3>
-//       <div className="flex flex-wrap gap-6 justify-center mb-16">
-//         {projectsData.fullstack.available.map((p, i) => (
-//           <ProjectCard key={p.title} {...p} i={i} />
-//         ))}
-//       </div>
-
-//       <h3 className="text-2xl font-bold mb-4 text-center text-gray-600 dark:text-gray-400">Coming Soon</h3>
-//       <div className="flex flex-wrap gap-6 justify-center">
-//         {projectsData.fullstack.comingSoon.map((p, i) => (
-//           <ProjectCard key={p.title} {...p} i={i} />
-//         ))}
-//       </div>
-//     </main>
-//   );
-// }
-
-
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/app/components/ui/card";
 import { Button } from "@/app/components/ui/button";
 import Navbar from "@/component/navbar/page";
+import { link } from "fs";
 
 type Project = {
   title: string;
@@ -142,42 +45,43 @@ const projectsData = {
       title: "Pikify",
       tech: "HTML, CSS, JS",
       description: "Wallpaper world with High resolution images.",
-      video: "/videos/pikify.mp4",
+      video: "https://res.cloudinary.com/dpiobntr2/video/upload/v1745995935/vyt7tp7l1bnjnbxyzjcj.mp4",
       link: "https://gallary-photoshop.vercel.app/"
     },
+
     {
       title: "My Blog",
       tech: "HTML, CSS, Js",
       description: "Pure CSS art showcase.",
-      video: "/videos/blog.mp4",
+      video: "https://res.cloudinary.com/dpiobntr2/video/upload/v1745995939/hmvph9yzf030ns8jow27.mp4",
       link: "https://blog-y9y4.vercel.app/"
     },
     {
       title: "My Music",
       tech: "HTML, CSS, Js",
       description: "Pure CSS art showcase.",
-      video: "/videos/music.mp4",
+      video: "https://res.cloudinary.com/dpiobntr2/video/upload/v1745996033/wyheigrromnxcyxtxc17.mp4",
       link: "https://music-player-annu.vercel.app/"
     },
     {
       title: "Gift Shop",
       tech: "HTML, CSS, Js",
       description: "Pure CSS art showcase.",
-      video: "/videos/gift.mp4",
+      video: "https://res.cloudinary.com/dpiobntr2/video/upload/v1745996057/bqauahzhazatuxlfybmk.mp4",
       link: "https://gift-shop-annu.netlify.app/"
     },
     {
       title: "Registration Form",
       tech: "HTML, CSS",
       description: "Pure CSS art showcase.",
-      video: "/videos/form.mp4",
+      video: "https://res.cloudinary.com/dpiobntr2/video/upload/v1745995906/ft0gdrz8kd5yfc3kku9d.mp4",
       link: "https://registration-form-rosy.vercel.app/"
     },
     {
       title: "Merry Christmas",
       tech: "HTML, CSS",
       description: "Pure CSS art showcase.",
-      video: "/videos/merry.mp4",
+      video: "https://res.cloudinary.com/dpiobntr2/video/upload/v1745995911/gnyeeltmnya5jcsn3ktf.mp4",
       link: "https://merry-christmas-using-html-css.vercel.app/"
     },
   ],
@@ -187,15 +91,22 @@ const projectsData = {
         title: "Qflows",
         tech: "Next.js, TypeScript, NeonDB, Prisma Orm",
         description: "A Code Visualizer App to view code execution step-by-step.",
-        video: "/videos/qflows.mp4",
+        video: "https://res.cloudinary.com/dpiobntr2/video/upload/v1745995919/vrigjcrdprfwilzhiwor.mp4",
         link: "https://qflows-annukumari.vercel.app/"
       },
       {
         title: "Crisis Sync",
         tech: "Next.js, Django, PostgreSQL",
         description: "Real-time disaster detection platform.",
-        video: "/videos/crisis.mp4",
+        video: "https://res.cloudinary.com/dpiobntr2/video/upload/v1745996025/ju2iq5hplitnnx4gcvmj.mp4",
         link: "https://crisis-sync.vercel.app/"
+      },
+      {
+        title: "AlgoFlow",
+        tech: "Next.js, TypeScript, Convex",
+        description: "DSA and Algorithms visualizer.",
+        video: "https://res.cloudinary.com/dpiobntr2/video/upload/v1745996059/seprhgoe0uguplcloopl.mp4",
+        link: "https://algoflow-41zu4vct1-annu-kumaris-projects.vercel.app/"
       },
     ],
     comingSoon: [
@@ -203,28 +114,21 @@ const projectsData = {
         title: "Eloqu AI",
         tech: "Next.js, TypeScript, Convex, Novel Editor",
         description: "",
-        image: "/assets/come.avif",
+        image: "https://res.cloudinary.com/dpiobntr2/image/upload/v1745996570/lmbl3m49icmycnv2xiiu.avif",
         link: "#"
       },
       {
         title: "Chain Nova",
         tech: "Next.js, Sonar API",
         description: "",
-        image: "/assets/come.avif",
-        link: "#"
-      },
-      {
-        title: "AlgoFlow",
-        tech: "Next.js, NeonDB",
-        description: "",
-        image: "/assets/come.avif",
+        image: "https://res.cloudinary.com/dpiobntr2/image/upload/v1745996570/lmbl3m49icmycnv2xiiu.avif",
         link: "#"
       },
       {
         title: "Hearo",
         tech: "Next.js, Convex, Sonar API",
         description: "",
-        image: "/assets/come.avif",
+        image: "https://res.cloudinary.com/dpiobntr2/image/upload/v1745996570/lmbl3m49icmycnv2xiiu.avif",
         link: "#"
       },
     ],
@@ -287,18 +191,25 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen w-full py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900">
       <Navbar />
-      <SectionTitle title="Frontend Projects" />
+      {/* <SectionTitle title="Frontend Projects" />
       <div className="flex flex-wrap gap-6 justify-center mb-16">
         {projectsData.frontend.map((p, i) => (
           <ProjectCard key={p.title} {...p} i={i} />
         ))}
-      </div>
+      </div> */}
 
       <SectionTitle title="Full Stack Projects" />
 
       <h3 className="text-2xl font-bold mb-4 text-center text-purple-600 dark:text-purple-400">Available Projects</h3>
       <div className="flex flex-wrap gap-6 justify-center mb-16">
         {projectsData.fullstack.available.map((p, i) => (
+          <ProjectCard key={p.title} {...p} i={i} />
+        ))}
+      </div>
+
+      <SectionTitle title="Frontend Projects" />
+      <div className="flex flex-wrap gap-6 justify-center mb-16">
+        {projectsData.frontend.map((p, i) => (
           <ProjectCard key={p.title} {...p} i={i} />
         ))}
       </div>
