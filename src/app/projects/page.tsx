@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/app/components/ui/card";
 import { Button } from "@/app/components/ui/button";
 import Navbar from "@/component/navbar/page";
-import { link } from "fs";
 
 type Project = {
   title: string;

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 
 // const navLinks = ["Home", "About", "Projects", "Contact"]
@@ -52,7 +53,7 @@ export default function Navbar() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
             >
-              <img
+              <Image
                 src="/assets/logo.png" // Replace with your image path
                 alt="Codexio Logo"
                 className="w-full h-full object-cover"
