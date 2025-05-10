@@ -11,12 +11,12 @@ import {
 } from "lucide-react"
 
 const socialLinks = [
-  { href: "https://github.com/yourusername", icon: Github },
-  { href: "https://linkedin.com/in/yourusername", icon: Linkedin },
-  { href: "https://x.com/yourusername", icon: Twitter },
-  { href: "https://youtube.com/@yourchannel", icon: Youtube },
-  { href: "https://hashnode.com/@yourusername", icon: PenTool },
-  { href: "https://codepen.io/yourusername", icon: Codepen },
+  { href: "https://github.com/annuk123", icon: Github },
+  { href: "https://www.linkedin.com/in/annu-kumari-540337237/", icon: Linkedin },
+  { href: "https://x.com/Annu66126617", icon: Twitter },
+  { href: "https://www.youtube.com/channel/UC3wYJlVEy9cMi5e_sZG-Q7Q", icon: Youtube },
+  { href: "https://hashnode.com/@Annuk123", icon: PenTool },
+  { href: "https://codepen.io/Annu-Kumar", icon: Codepen },
 ]
 
 export function MobileBottomNav() {

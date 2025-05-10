@@ -2,7 +2,7 @@
 import About from "./about/page";
 import Footer from "./Footer/page";
 import TechStack from "./techstack/page";
-import Navbar from "../component/navbar/page";
+import Navbar from "../components/navbar/page";
 import BlobDivider from "./blobdivider/blob";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";

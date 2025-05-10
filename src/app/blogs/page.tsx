@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Navbar from "@/component/navbar/page";
+import Navbar from "@/components/navbar/page";
 
 export default function Blog() {
   return (
@@ -826,7 +826,7 @@ export default function Blog() {
             </motion.a>
           </div>
         </motion.div>
-        </motion.div>
+      </motion.div>
       {/* </motion.div> */}
     </section>
   );
