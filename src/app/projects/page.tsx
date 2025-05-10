@@ -188,7 +188,7 @@ const ProjectCard = ({ title, tech, description, video, image, link, i }: Projec
   
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen w-full py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900">
+    <main className="min-h-screen w-full py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 bg-grid-dark">
       <Navbar />
       {/* <SectionTitle title="Frontend Projects" />
       <div className="flex flex-wrap gap-6 justify-center mb-16">

@@ -5,8 +5,10 @@ import Navbar from "@/component/navbar/page";
 
 export default function Blog() {
   return (
-    <section className="max-w-7xl mx-auto w-full px-6 sm:px-12 md:px-20 py-16">
+    <section className="min-h-screen w-full py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 bg-grid-dark">
+      {/* Background Gradient */}
       <Navbar />
+      {/* <motion.div> */}
       <motion.h2
         initial={{ opacity: 0, y: 50, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -824,7 +826,8 @@ export default function Blog() {
             </motion.a>
           </div>
         </motion.div>
-      </motion.div>
+        </motion.div>
+      {/* </motion.div> */}
     </section>
   );
 }

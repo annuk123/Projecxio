@@ -67,6 +67,73 @@
   }
 }
 
+/* globals.css */
+.bg-grid-dark {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Animated gradient for light mode */
+.bg-grid-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7, #ffe0b2);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* Dark theme override using prefers-color-scheme */
+.dark .bg-grid-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    120deg,
+    #0f172a,
+    #1e293b,
+    #0f1f35,
+    #1a2b45,
+    #0c1c2f
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease-in infinite;
+  opacity: 0.9;
+  border-radius: inherit;
+  transition: all 0.3s ease;
+}
+
+.dark .bg-grid-dark {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.09) 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-position: center;
+  overflow: hidden;
+}
+
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 
 :root {
   --radius: 0.625rem;
