@@ -1,4 +1,3 @@
-// components/Reveal.tsx
 "use client";
 
 import { motion, useAnimation } from "framer-motion";

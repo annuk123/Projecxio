@@ -1,15 +1,73 @@
 "use client";
-import About from "./about/page";
-import Footer from "./Footer/page";
-import TechStack from "./techstack/page";
+import About from "../components/recentBlog/page";
+import Footer from "../components/Footer/page";
+import TechStack from "../components/techstack/page";
 import Navbar from "../components/navbar/page";
-import BlobDivider from "./blobdivider/blob";
+import BlobDivider from "../components/blobdivider/blob";
 import { motion } from "framer-motion";
+import { FaReact } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import FootDivider from "./footdiv/foot";
-import Reveal from "./reveal/reveal";
-import Hero from "./hero/page";
+import FootDivider from "../components/footdiv/foot";
+import Reveal from "../components/reveal/reveal";
+import Hero from "../components/abouts/page";
+import { FloatingIcon } from "../components/FloatingIcon/float";
+import { SiNextdotjs, SiTailwindcss, SiFigma, SiGit } from "react-icons/si";
+import { TbBrandFramerMotion } from "react-icons/tb";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiPython,
+  SiChakraui,
+  SiMongodb,
+  SiRedux,
+  SiShadcnui,
+  SiGithub,
+  SiVite,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+import Projects from "@/components/projectsPage/project";
+
+const ICONS = [
+  FaReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFigma,
+  TbBrandFramerMotion,
+  SiTypescript,
+  SiJavascript,
+  SiPython,
+  SiShadcnui,
+  FaJava,
+  SiGithub,
+  SiMongodb,
+  SiRedux,
+  SiChakraui,
+  SiVite,
+  SiGit,
+];
+
+const generateUniquePositions = (count: number) => {
+  const positions: { top: string; left: string }[] = [];
+
+  while (positions.length < count) {
+    const top = `${Math.floor(Math.random() * 70 + 5)}%`;
+    const left = `${Math.floor(Math.random() * 90 + 5)}%`;
+
+    const isOverlapping = positions.some(
+      (pos) =>
+        Math.abs(parseFloat(pos.top) - parseFloat(top)) < 15 &&
+        Math.abs(parseFloat(pos.left) - parseFloat(left)) < 15
+    );
+
+    if (!isOverlapping) {
+      positions.push({ top, left });
+    }
+  }
+
+  return positions;
+};
+
+const positions = generateUniquePositions(ICONS.length);
 
 const titles = [
   "I'm Annu Kumari",
@@ -71,16 +129,31 @@ function TypewriterText({ texts }: { texts: string[] }) {
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-white via-rose-50 to-violet-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 transition-colors duration-500">
+    <div className="relative flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-white via-rose-50 to-violet-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 transition-colors duration-500 bg-grid-dark">
       {/* Navbar */}
       <Navbar />
       {/* Animated or Static Blobs in Background */}
 
+
+
       {/* Hero Section with Typewriter */}
-      <section className="flex flex-col items-center justify-center text-center w-full px-6 sm:px-12 lg:px-24 py-30 ">
+      <section className="flex z-10 relative flex-col items-center justify-center text-center w-full px-6 sm:px-12 lg:px-24 py-30 ">
+        {/* Floating icons container */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          {ICONS.map((Icon, i) => (
+            <FloatingIcon
+              key={i}
+              Icon={Icon}
+              delay={i * 0.3}
+              top={positions[i].top}
+              left={positions[i].left}
+            />
+          ))}
+        </div>
+
         <Reveal>
           <motion.h1
-            className="text-4xl sm:text-6xl font-extrabold leading-tight mb-6 text-black dark:text-white overflow-hidden min-h-[3.5rem] sm:min-h-[4.5rem]"
+            className="text-4xl sm:text-6xl font-extrabold leading-tight mb-6 text-black dark:text-white overflow-hidden min-h-[3.5rem] sm:min-h-[4.5rem] z-10"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -101,43 +174,66 @@ export default function Home() {
           </motion.p>
 
           <motion.div
-            className="flex flex-wrap justify-center gap-4"
+            className="flex flex-col items-center gap-4 mt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300">
-              View Projects
-            </button>
-
-            <Link
-              href="/FrontendResume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Animated Available Badge */}
+            <motion.div
+              className="mt-8 px-5 py-3 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 text-black dark:text-white rounded-full text-sm sm:text-base font-semibold shadow-lg hover:scale-105 transition"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <button className="px-6 py-3 rounded-xl bg-white dark:bg-gray-900 text-purple-600 dark:text-purple-400 border border-purple-600 dark:border-purple-400 font-semibold shadow hover:scale-105 transition-all duration-300">
-                Download Resume
-              </button>
-            </Link>
+              Available for Freelance – Let’s Work Together!
+            </motion.div>
+
+            {/* 👨‍💻 Rotating Taglines */}
+
+            {/* Contact Me Button */}
           </motion.div>
+
+          {/* Floating Tech Icons */}
+          <motion.div
+            className="relative mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 z-10"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 1 }}
+          >
+          </motion.div>
+
+          {/* Spotlight Background */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div className="spotlight" />
+          </div>
         </Reveal>
       </section>
 
       <BlobDivider flip fillColor="#000000" />
-      {/* <WaveDivider /> */}
       <section className="w-full relative z-10 py-4 bg-black">
+        
         <Reveal>
           <Hero />
         </Reveal>
       </section>
 
       {/* Other Sections */}
+       
 
       <section className="w-full px-6 sm:px-12 lg:px-24  mt-12">
+        
         <Reveal>
           <About />
         </Reveal>
       </section>
+
+      
+      <section className="w-full relative z-10 py-4 mt-9 bg-black">
+        <Reveal>
+          <Projects />
+        </Reveal>
+      </section>
+      <BlobDivider flip={false} fillColor="#000000" />
 
       <section className="w-full px-6 sm:px-12 lg:px-24 py-20">
         <Reveal>

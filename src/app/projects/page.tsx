@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/app/components/ui/card";
-import { Button } from "@/app/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Navbar from "@/components/navbar/page";
+import { useState } from "react";
+import ProjectDrawer from "@/components/projectDrawer/projectDrawer";
 
 type Project = {
   title: string;
@@ -12,7 +13,8 @@ type Project = {
   video?: string;
   image?: string;
   link?: string;
-  i: number;
+  i?: number;
+    onClick?: () => void; // add this line
 };
 
 const fadeUp = {
@@ -36,6 +38,7 @@ const SectionTitle = ({ title }: { title: string }) => (
     {title}
   </motion.h2>
 );
+
 
 const projectsData = {
   frontend: [
@@ -90,33 +93,36 @@ const projectsData = {
     },
   ],
   fullstack: {
-    available: [
-      {
-        title: "Qflows",
-        tech: "Next.js, TypeScript, NeonDB, Prisma Orm",
-        description:
-          "A Code Visualizer App to view code execution step-by-step.",
-        video:
-          "https://res.cloudinary.com/dpiobntr2/video/upload/v1745995919/vrigjcrdprfwilzhiwor.mp4",
-        link: "https://qflows-annukumari.vercel.app/",
-      },
-      {
-        title: "Crisis Sync",
-        tech: "Next.js, Django, PostgreSQL",
-        description: "Real-time disaster detection platform.",
-        video:
-          "https://res.cloudinary.com/dpiobntr2/video/upload/v1745996025/ju2iq5hplitnnx4gcvmj.mp4",
-        link: "https://crisis-sync.vercel.app/",
-      },
-      {
-        title: "AlgoFlow",
-        tech: "Next.js, TypeScript, Convex",
-        description: "DSA and Algorithms visualizer.",
-        video:
-          "https://res.cloudinary.com/dpiobntr2/video/upload/v1745996059/seprhgoe0uguplcloopl.mp4",
-        link: "https://algoflow-41zu4vct1-annu-kumaris-projects.vercel.app/",
-      },
-    ],
+available: [
+  {
+    title: "Qflows",
+    tech: "Next.js, TypeScript, NeonDB, Prisma ORM, Framer Motion, Tailwind CSS",
+    description:
+      "An advanced code visualization platform that brings algorithms to life through interactive, step-by-step execution views — perfect for learners and educators.",
+    video:
+      "https://res.cloudinary.com/dpiobntr2/video/upload/v1745995919/vrigjcrdprfwilzhiwor.mp4",
+    link: "https://qflows-annukumari.vercel.app/",
+  },
+  {
+    title: "Crisis Sync",
+    tech: "Next.js, Django, PostgreSQL, Framer Motion, Tailwind CSS",
+    description:
+      "A real-time disaster response dashboard that monitors, detects, and syncs critical events globally to enhance crisis awareness and emergency coordination.",
+    video:
+      "https://res.cloudinary.com/dpiobntr2/video/upload/v1745996025/ju2iq5hplitnnx4gcvmj.mp4",
+    link: "https://crisis-sync.vercel.app/",
+  },
+  {
+    title: "AlgoFlow",
+    tech: "Next.js, TypeScript, Convex, Tailwind CSS, Framer Motion, Shadcn",
+    description:
+      "A powerful data structures and algorithms visualizer designed to simplify complex logic through clean animations, intuitive controls, and a modern UI experience.",
+    video:
+      "https://res.cloudinary.com/dpiobntr2/video/upload/v1745996059/seprhgoe0uguplcloopl.mp4",
+    link: "https://algoflow-41zu4vct1-annu-kumaris-projects.vercel.app/",
+  },
+],
+
     comingSoon: [
       {
         title: "Eloqu AI",
@@ -152,7 +158,7 @@ const ProjectCard = ({
   description,
   video,
   image,
-  link,
+  onClick,
   i,
 }: Project) => (
   <motion.div
@@ -160,9 +166,11 @@ const ProjectCard = ({
     custom={i}
     variants={fadeUp}
     initial="hidden"
+    onClick={onClick}
     whileInView="visible"
     viewport={{ once: true }}
   >
+   
     <Card className="rounded-2xl overflow-hidden bg-white/30 dark:bg-zinc-900/30 backdrop-blur shadow-md border border-zinc-200 dark:border-zinc-800 hover:scale-[1.02] transition-transform h-full flex flex-col">
       {/* Media: Show video or image */}
       <div className="relative w-full h-48">
@@ -185,40 +193,37 @@ const ProjectCard = ({
         <h3 className="text-xl font-semibold mb-2 text-zinc-800 dark:text-zinc-100">
           {title}
         </h3>
-        <p className="text-sm mb-2 text-zinc-500 dark:text-zinc-400">{tech}</p>
+         <div className="flex flex-wrap gap-2 mb-3">
+            {tech.split(',').map((t) => (
+              <span
+                key={t.trim()}
+                className="bg-purple-100 text-purple-800 dark:bg-gray-700 dark:text-gray-300 text-xs font-medium px-2.5 py-1 rounded-md"
+              >
+                {t.trim()}
+              </span>
+            ))}
+          </div>
         <p className="text-sm text-zinc-700 dark:text-zinc-300 mb-4">
           {description}
         </p>
 
-        {/* View Project Button */}
-        {video && link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-auto"
-          >
-            <Button className="w-full text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:bg-purple-700 font-semibold shadow-lg hover:scale-105 transition-all duration-300">
-              View Project
-            </Button>
-          </a>
-        )}
+      
+
+        
+
+
       </CardContent>
     </Card>
   </motion.div>
 );
 
 export default function ProjectsPage() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+const [drawerOpen, setDrawerOpen] = useState(false);
+
   return (
     <main className="min-h-screen w-full py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 bg-grid-dark">
       <Navbar />
-      {/* <SectionTitle title="Frontend Projects" />
-      <div className="flex flex-wrap gap-6 justify-center mb-16">
-        {projectsData.frontend.map((p, i) => (
-          <ProjectCard key={p.title} {...p} i={i} />
-        ))}
-      </div> */}
-
       <SectionTitle title="Full Stack Projects" />
 
       <h3 className="text-2xl font-bold mb-4 text-center text-purple-600 dark:text-purple-400">
@@ -226,7 +231,16 @@ export default function ProjectsPage() {
       </h3>
       <div className="flex flex-wrap gap-6 justify-center mb-16">
         {projectsData.fullstack.available.map((p, i) => (
-          <ProjectCard key={p.title} {...p} i={i} />
+          // <ProjectCard key={p.title} {...p} i={i} />
+                     <ProjectCard
+  key={p.title}
+  {...p}
+  i={i}
+  onClick={() => {
+    setSelectedProject(p);
+    setDrawerOpen(true);
+  }}
+/>
         ))}
       </div>
 
@@ -245,6 +259,17 @@ export default function ProjectsPage() {
           <ProjectCard key={p.title} {...p} i={i} />
         ))}
       </div>
+      
+
+      <ProjectDrawer
+  open={drawerOpen}
+  onOpenChange={(open) => {
+    setDrawerOpen(open);
+    if (!open) setSelectedProject(null);
+  }}
+  project={selectedProject}
+/>
     </main>
   );
 }
+

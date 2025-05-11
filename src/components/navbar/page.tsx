@@ -9,10 +9,10 @@ import Image from "next/image";
 // const navLinks = ["Home", "About", "Projects", "Contact"]
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
-  { href: "/blogs", label: "Blogs" },
+  { href: "https://myfirstblog123.hashnode.dev/", target: "_black", label: "Blogs" },
+  { href : "https://www.behance.net/annukumari40", target: "_black", label: "Graphic Designs" },
 ];
 
 
@@ -45,7 +45,7 @@ export default function Navbar() {
               animate={{ opacity: 1, x: 0 }}
             >
               <Image
-                src="/assets/logo.png" // Replace with your image path
+                src="/assets/logo.png"
                 alt="Codexio Logo"
                 width={40}
                 height={40}

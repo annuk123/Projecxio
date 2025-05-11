@@ -1,6 +1,7 @@
-"use client"
 
-import { motion, AnimatePresence } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import {
   Github,
   Linkedin,
@@ -12,7 +13,7 @@ import {
   Mail,
 } from "lucide-react"
 
-const socialLinks = [
+const socials = [
   { href: "https://github.com/annuk123", icon: Github },
   { href: "https://www.linkedin.com/in/annu-kumari-540337237/", icon: Linkedin },
   { href: "https://x.com/Annu66126617", icon: Twitter },
@@ -23,19 +24,24 @@ const socialLinks = [
   { href: "https://buymeacoffee.com/anuk35168l", icon: Coffee },
 ]
 
-export function MobileBottomNav() {
 
+export default function Footer() {
   return (
-    <motion.nav
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white/70 dark:bg-zinc-900/80 backdrop-blur-md border shadow-xl rounded-2xl px-5 py-3 flex flex-col items-center space-y-3 md:hidden max-w-[22rem] w-[90%]"
-    >
-      {/* Social Icons */}
-      <div className="flex justify-center items-center space-x-4">
-        <AnimatePresence>
-          {socialLinks.map(({ href, icon: Icon }) => (
+    <footer className="relative z-10 px-6 sm:px-12 lg:px-24 py-10 mt-15  bg-black border-b border-gray-900 dark:border-gray-800 ">
+      <motion.div
+        className="flex flex-col sm:flex-row justify-between items-center gap-6"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-center sm:text-left bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent  dark:text-gray-400">
+          © {new Date().getFullYear()} Annu Kumari — Built with ❤️ using Next.js
+        </p>
+
+        <div className="flex gap-5 text-xl">
+         <AnimatePresence>
+          {socials.map(({ href, icon: Icon }) => (
             <motion.a
               key={href}
               href={href}
@@ -49,7 +55,9 @@ export function MobileBottomNav() {
             </motion.a>
           ))}
         </AnimatePresence>
-      </div>
-    </motion.nav>
-  )
+        </div>
+      </motion.div>
+    </footer>
+  );
 }
+
