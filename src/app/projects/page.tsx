@@ -119,7 +119,7 @@ available: [
       "A powerful data structures and algorithms visualizer designed to simplify complex logic through clean animations, intuitive controls, and a modern UI experience.",
     video:
       "https://res.cloudinary.com/dpiobntr2/video/upload/v1745996059/seprhgoe0uguplcloopl.mp4",
-    link: "https://algoflow-41zu4vct1-annu-kumaris-projects.vercel.app/",
+    link: "https://algoflow-three.vercel.app/",
   },
 ],
 
