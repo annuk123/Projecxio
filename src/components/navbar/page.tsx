@@ -57,7 +57,7 @@ export default function Navbar() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
             >
-              IndieSpark
+              Projexio
             </motion.div>
           </Link>
 
