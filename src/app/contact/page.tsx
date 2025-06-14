@@ -29,13 +29,26 @@ export default function ContactForm() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-xl w-full text-center space-y-6"
         >
-          <h1 className="text-4xl font-bold mt-6 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent dark:text-gray-400">
-            Contact.
-          </h1>
-          <p className="text-muted-foreground">
+  <motion.h2
+    initial={{ opacity: 0, y: 50, scale: 0.95 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{
+      duration: 0.8,
+      ease: "easeOut",
+      type: "spring",
+      stiffness: 100,
+    }}
+   
+  >
+    <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent text-4xl sm:text-5xl font-extrabold text-center mt-7 lg:px-35 drop-shadow-md flex items-center ">
+      Contact Me
+    </span>
+              <p className="text-muted-foreground">
             Get in touch or shoot me an email directly on{" "}
             <span className="font-semibold">yourmail@example.com</span>
           </p>
+  </motion.h2>
+
 
           <motion.form
             onSubmit={handleSubmit}

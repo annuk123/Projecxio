@@ -28,8 +28,23 @@ const About = () => {
     <section ref={ref} className="relative text-white overflow-hidden">
       <div className="min-h-[90vh] flex flex-col justify-center items-center px-6 sm:px-12 lg:px-24 text-center">
         <motion.main animate={controls} className="flex flex-col items-center justify-center">
+  <motion.h2
+    initial={{ opacity: 0, y: 50, scale: 0.95 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{
+      duration: 0.8,
+      ease: "easeOut",
+      type: "spring",
+      stiffness: 100,
+    }}
+    className="text-4xl sm:text-5xl font-extrabold text-center mb-14 drop-shadow-md flex items-center gap-4"
+  >
+    <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
+      About Me
+    </span>
+  </motion.h2>
 
-          <motion.p className="text-gray-400 dark:text-gray-300 max-w-2xl text-lg md:text-xl mt-6 leading-relaxed">
+          <motion.p className="text-gray-400 dark:text-gray-300 max-w-2xl text-lg md:text-xl leading-relaxed">
             Hey, I&apos;m <strong>Annu Kumari</strong> — a passionate Indie Hacker and Full Stack Developer, building impactful tools, products, and digital experiences under <span className="text-pink-400 font-medium">Projecxio</span>.
             <br /><br />
             Projecxio isn&apos;t just a project — it&apos;s a playground for bold ideas, fast builds, and real-world solutions. I thrive on creating <span className="text-purple-400 font-medium">lean, scalable, and creator-friendly</span> products that empower developers, entrepreneurs, and indie hackers to launch faster and build smarter.
