@@ -11,6 +11,7 @@ import Reveal from "../components/reveal/reveal";
 import Hero from "../components/abouts/page";
 import { FloatingIcon } from "../components/FloatingIcon/float";
 import { SiNextdotjs, SiTailwindcss, SiFigma, SiGit } from "react-icons/si";
+import Link from "next/link";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import {
   SiJavascript,
@@ -165,27 +166,26 @@ export default function Home() {
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 1.2, duration: 0.8 }}
 >
-  {/* View Work Button */}
-  <motion.button
-    className="relative px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-fuchsia-500 to-cyan-500 shadow-lg hover:shadow-fuchsia-500/50 overflow-hidden group transition-transform duration-300"
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.95 }}
+  <Link 
+  href="/projects" 
+  className="relative px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-fuchsia-500 to-cyan-500 shadow-lg hover:shadow-fuchsia-500/50 overflow-hidden group transition-transform duration-300"
   >
     <span className="relative z-10">View Work</span>
     {/* Shine Effect */}
     <span className="absolute left-[-75%] top-0 w-1/2 h-full bg-white opacity-20 transform skew-x-[-20deg] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
-  </motion.button>
+  </Link>
 
-  {/* Contact Me Button */}
-  <motion.button
-    className="relative px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 shadow-lg hover:shadow-emerald-500/50 overflow-hidden group transition-transform duration-300"
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.95 }}
+  {/* View Work Button */}
+  <Link 
+  href="/contact" 
+  className="relative px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 shadow-lg hover:shadow-emerald-500/50 overflow-hidden group transition-transform duration-300"
   >
     <span className="relative z-10">Contact Me</span>
     {/* Shine Effect */}
     <span className="absolute left-[-75%] top-0 w-1/2 h-full bg-white opacity-20 transform skew-x-[-20deg] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
-  </motion.button>
+  </Link>
+
+
 </motion.div>
 
 

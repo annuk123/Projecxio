@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#  Projecxio
 
-## Getting Started
+*Designing Exceptional Web Experiences with Precision, Passion, and Powerful Technologies.*
 
-First, run the development server:
+<br/>
+
+![Projecxio Banner](/public/image.png)
+
+
+## Overview
+
+**Projecxio** is a professional portfolio and project showcase platform built to present full-stack and frontend projects with a modern, animated, and visually engaging experience.
+
+Designed for indie hackers, creative developers, and passionate builders who want to create impactful first impressions.
+
+---
+![Projecxio Banner](/public/image.png)
+![blog](/public/image1.png)
+![projects](/public/image9.png)
+![project](/public/image-1.png)
+![projectdoc](/public/image-2.png)
+![contact](/public/image-3.png)
+![algorithm](/public/image-4.png)
+
+##  Features
+
+*  Interactive Project Cards with Smooth Animations
+*  Video & Image Project Previews
+*  Project Drawer for Detailed View
+*  Fully Responsive, Brand-Level UI
+*  Light and Dark Mode Support
+*  Beautiful Tech Stack Badges
+*  Integrated Contact Form with Formspree
+*  Modular Codebase with Reusable Components
+*  Built with Next.js, TypeScript, Tailwind CSS, Framer Motion, Shadcn UI
+
+---
+
+##  Tech Stack
+
+* **Frontend:** Next.js, React, TypeScript, Tailwind CSS
+* **Animations:** Framer Motion
+* **UI Components:** Shadcn UI
+* **Form Handling:** Formspree
+* **Icons:** Lucide React
+
+---
+
+##  Getting Started
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/annuk123/projecxio.git
+cd projecxio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Run the Development Server
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Build for Production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+##  Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you want to collaborate, hire, or just say hi:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*  Email: [yourmail@example.com](mailto:anuk35168@gmail.com)
+*  Portfolio: [https://your-portfolio.com](https://projexio-annu-kumari.vercel.app/)
+*  Twitter: [@yourhandle](https://x.com/Annu66126617)
+*  LinkedIn: [Your Profile](https://www.linkedin.com/in/annu-kumari-540337237/)
+
+---
+
+## 🙏 Acknowledgements
+
+* Special thanks to [Shadcn UI](https://github.com/shadcn/ui) for the amazing component library.
+* Powered by [Formspree](https://formspree.io/) for seamless contact form handling.
+* Inspired by indie hackers, builders, and creators.
+
+---
+
+## 📃 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
