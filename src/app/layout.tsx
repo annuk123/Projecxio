@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IndieSpark | Annu Kumari",
+  title: "Projexio | Annu Kumari",
 
   description: "Portfolio of Annu Kumari",
 };
