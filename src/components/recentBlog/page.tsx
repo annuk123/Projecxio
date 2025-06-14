@@ -148,7 +148,7 @@ export default function Blog() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 + idx * 0.2, duration: 0.6 }}
-            className="text-xl font-semibold text-white mb-3"
+            className="text-xl font-semibold text-gray-900 dark:text-white mb-3"
           >
             {blog.title}
           </motion.h3>

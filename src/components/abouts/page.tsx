@@ -40,21 +40,20 @@ const About = () => {
     className="text-4xl sm:text-5xl font-extrabold text-center mb-14 drop-shadow-md flex items-center gap-4"
   >
     <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
-      About Me
+      About Projexio
     </span>
   </motion.h2>
 
-          <motion.p className="text-gray-400 dark:text-gray-300 max-w-2xl text-lg md:text-xl leading-relaxed">
-            Hey, I&apos;m <strong>Annu Kumari</strong> — a passionate Indie Hacker and Full Stack Developer, building impactful tools, products, and digital experiences under <span className="text-pink-400 font-medium">Projecxio</span>.
-            <br /><br />
-            Projecxio isn&apos;t just a project — it&apos;s a playground for bold ideas, fast builds, and real-world solutions. I thrive on creating <span className="text-purple-400 font-medium">lean, scalable, and creator-friendly</span> products that empower developers, entrepreneurs, and indie hackers to launch faster and build smarter.
-            <br /><br />
-            Whether it&apos;s a quick MVP, a developer tool, or a long-term product vision — I&apos;m on a mission to bring ideas to life with clarity, simplicity, and purpose.
-            <br />
-            <span className="text-pink-400 font-medium">
-              Let&apos;s build things that matter — fast, fun, and fearlessly.
-            </span>
-          </motion.p>
+<motion.p className="text-gray-400 dark:text-gray-300 max-w-2xl text-lg md:text-xl leading-relaxed">
+  <span className="text-pink-400 font-medium">Projecxio</span> is not just a portfolio — it’s a playground for bold ideas, rapid builds, and impactful digital experiences.
+  <br /><br />
+  It’s where <span className="text-purple-400 font-medium">experiments turn into products</span>, where creators move fast, and where indie tools are designed to empower developers, entrepreneurs, and makers to build smarter, leaner, and faster.
+  <br /><br />
+  Whether it's a developer utility, an interactive visualizer, or a launch-ready MVP — Projecxio is about <span className="text-pink-400 font-medium">building with purpose, precision, and passion.</span>
+  <br /><br />
+  Let’s build things that matter — <span className="text-purple-400 font-medium">fast, fearless, and future-ready.</span>
+</motion.p>
+
         </motion.main>
       </div>
 

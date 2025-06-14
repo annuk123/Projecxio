@@ -152,7 +152,7 @@ export default function Home() {
   animate={{ opacity: 1 }}
   transition={{ delay: 1, duration: 1 }}
 >
-  Hi, I’m <span className="font-semibold text-purple-600 dark:text-purple-400">Annu Kumari</span> — a self-driven indie hacker and creative technologist on a mission to build tools, products, and experiences that truly matter.  
+  Hi, I’m <span className="font-semibold text-purple-600 dark:text-purple-400">Annu Kumari</span> — <span className="font-semibold text-purple-600 dark:text-gray-400">a Full stack Developer(Next.js + Convex)</span> , self-driven indie hacker and creative technologist on a mission to build tools, products, and experiences that truly matter.  
   <br className="hidden sm:block mt-2" />
   <span className="inline-block mt-2">Designing exceptional web experiences with precision, passion, and powerful technologies.</span>
 </motion.p>
