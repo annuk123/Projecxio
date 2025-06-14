@@ -133,6 +133,16 @@
   }
 }
 
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shine {
+  animation: shine 1.5s infinite linear;
+}
+
+
 @keyframes moveSpotlight {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);

@@ -57,63 +57,71 @@ export default function TechStack() {
   return (
 
 
-    <section className="w-full bg-white/20 rounded-3xl dark:bg-zinc-900/20 py-24 px-6 sm:px-16 flex flex-col items-center justify-center">
+<section className="w-full bg-white/20 rounded-3xl dark:bg-zinc-900/20 py-24 px-6 sm:px-16 flex flex-col items-center justify-center">
+  {/* Section Title */}
+  <motion.h2
+    className="text-4xl sm:text-5xl font-extrabold text-center mb-6 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    viewport={{ once: true }}
+  >
+    My Tech Stack
+  </motion.h2>
 
-     
-      <motion.h2
-        className="text-4xl bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent font-extrabold sm:text-5xl  text-center mb-6"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-      >
-        My Tech Stack
-      </motion.h2>
+  {/* Animated Divider */}
+  <motion.div
+    className="w-24 h-1 mb-12 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 animate-pulse"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ delay: 0.5, duration: 0.5 }}
+    viewport={{ once: true }}
+  />
 
-      {/* Divider Line / Scroll Indicator */}
-      <motion.div
-        className="w-24 h-1 mb-12 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent animate-pulse"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        viewport={{ once: true }}
-      />
+  {/* Tech Grid */}
+  <motion.div
+    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl"
+    variants={container}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+  >
+    {techStack.map(({ name, icon, colorFrom, colorTo, desc }) => (
+      <Tooltip.Provider key={name}>
+        <Tooltip.Root>
+          <Tooltip.Trigger asChild>
+            <motion.div
+              variants={item}
+              className={`relative group px-5 py-4 rounded-xl text-md sm:text-lg font-semibold text-purple-400 cursor-pointer
+              bg-gradient-to-br from-[${colorFrom}] to-[${colorTo}]
+              shadow-md hover:shadow-2xl transform transition-all duration-300 ease-in-out hover:scale-105 backdrop-blur-md`}
+              whileHover={{ scale: 1.08 }}
+            >
+              {/* Floating Glow Effect */}
+              <div className="absolute inset-0 rounded-xl opacity-20 group-hover:opacity-40 blur-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 -z-10" />
+              <div className="flex items-center gap-3 justify-center">
+                {icon}
+                {name}
+              </div>
+            </motion.div>
+          </Tooltip.Trigger>
 
-      {/* Tech Grid */}
-      <motion.div
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
-        {techStack.map(({ name, icon, colorFrom, colorTo, desc } ) => (
-          <Tooltip.Provider key={name}>
-            <Tooltip.Root>
-              <Tooltip.Trigger asChild>
-                <motion.div
-                  variants={item}
-                  className={`relative group px-5 py-4 rounded-xl text-md sm:text-lg font-medium text-purple-400 hover:text-pink-500 bg-gradient-to-br from-[${colorFrom}] to-[${colorTo}] shadow-md hover:shadow-2xl transform transition-all duration-300 ease-in-out backdrop-blur-md`}
-                  whileHover={{ scale: 1.08 }}
-                >
-                  {/* Floating glow effect */}
-                  <div className="absolute inset-0 rounded-xl opacity-20 group-hover:opacity-40 blur-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500  -z-10" />
-                  <div className="flex items-center gap-2 justify-center">
-                    {icon}
-                    {name}
-                  </div>
-                </motion.div>
-              </Tooltip.Trigger>
-              <Tooltip.Portal>
-                <Tooltip.Content className="z-50 rounded-md bg-black text-white px-3 py-2 text-sm shadow-md animate-fadeIn">
-                  {desc}
-                  <Tooltip.Arrow className="fill-black" />
-                </Tooltip.Content>
-              </Tooltip.Portal>
-            </Tooltip.Root>
-          </Tooltip.Provider>
-        ))}
-      </motion.div>
-    </section>
+          {/* Tooltip */}
+          <Tooltip.Portal>
+            <Tooltip.Content
+              side="top"
+              sideOffset={8}
+              className="z-50 rounded-md bg-black/90 text-white px-3 py-2 text-sm shadow-lg backdrop-blur-sm animate-fadeIn max-w-[200px] text-center"
+            >
+              {desc}
+              <Tooltip.Arrow className="fill-black" />
+            </Tooltip.Content>
+          </Tooltip.Portal>
+        </Tooltip.Root>
+      </Tooltip.Provider>
+    ))}
+  </motion.div>
+</section>
+
   );
 }

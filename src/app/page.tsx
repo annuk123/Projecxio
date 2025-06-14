@@ -4,9 +4,8 @@ import Footer from "../components/Footer/page";
 import TechStack from "../components/techstack/page";
 import Navbar from "../components/navbar/page";
 import BlobDivider from "../components/blobdivider/blob";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { FaReact } from "react-icons/fa";
-import { useEffect, useState } from "react";
 import FootDivider from "../components/footdiv/foot";
 import Reveal from "../components/reveal/reveal";
 import Hero from "../components/abouts/page";
@@ -26,6 +25,7 @@ import {
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import Projects from "@/components/projectsPage/project";
+import TypewriterText from "@/components/typewriter/TypeWriter";
 
 const ICONS = [
   FaReact,
@@ -78,67 +78,40 @@ const titles = [
   "I'm a Open Source Ethusiast",
 ];
 
-function TypewriterText({ texts }: { texts: string[] }) {
-  const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-  const [blink, setBlink] = useState(true);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBlink((prev) => !prev);
-    }, 500);
-    return () => clearInterval(interval);
-  }, []);
 
-  useEffect(() => {
-    if (index >= texts.length) return;
 
-    const currentText = texts[index];
-
-    if (!deleting && subIndex === currentText.length) {
-      const timeout = setTimeout(() => setDeleting(true), 1000);
-      return () => clearTimeout(timeout);
-    }
-
-    if (deleting && subIndex === 0) {
-      setDeleting(false);
-      setIndex((prev) => (prev + 1) % texts.length);
-      return;
-    }
-
-    const timeout = setTimeout(
-      () => {
-        setSubIndex((prev) => prev + (deleting ? -1 : 1));
-      },
-      deleting ? 40 : 100
-    );
-
-    return () => clearTimeout(timeout);
-  }, [subIndex, deleting, index, texts]);
-
-  return (
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500 ">
-      {texts[index].substring(0, subIndex)}
-      <span
-        className={`ml-1 ${blink ? "border-r-2 border-fuchsia-500" : ""}`}
-      />
-    </span>
-  );
-}
 
 export default function Home() {
+    const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
-    <div className="relative flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-white via-rose-50 to-violet-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 transition-colors duration-500 bg-grid-dark">
+<div className="relative flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-white via-rose-50 to-violet-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 transition-colors duration-500 bg-grid-dark overflow-hidden">
+
+      {/* Scroll Progress Bar */}
+      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-purple-500 z-[1000] origin-left" style={{ scaleX }} />
+
+      {/* Background Particles */}
+      <FloatingIcon
+        Icon={FaReact}
+        delay={0}
+        top="50%"
+        left="50%"
+        rotation={Math.random() * 20 - 10}
+      />
+
       {/* Navbar */}
       <Navbar />
-      {/* Animated or Static Blobs in Background */}
 
+      {/* Hero Section */}
+      <section className="flex z-10 relative flex-col items-center justify-center text-center w-full px-6 sm:px-12 lg:px-24 py-30 min-h-screen">
 
-
-      {/* Hero Section with Typewriter */}
-      <section className="flex z-10 relative flex-col items-center justify-center text-center w-full px-6 sm:px-12 lg:px-24 py-30 ">
-        {/* Floating icons container */}
+        {/* Floating icons */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           {ICONS.map((Icon, i) => (
             <FloatingIcon
@@ -147,62 +120,84 @@ export default function Home() {
               delay={i * 0.3}
               top={positions[i].top}
               left={positions[i].left}
+              rotation={Math.random() * 20 - 10}
             />
           ))}
         </div>
 
         <Reveal>
-          <motion.h1
-            className="text-4xl sm:text-6xl font-extrabold leading-tight mb-6 text-black dark:text-white overflow-hidden min-h-[3.5rem] sm:min-h-[4.5rem] z-10"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="w-[280px] sm:w-[900px] mx-auto text-center whitespace-nowrap overflow-hidden -top-30">
-              <TypewriterText texts={titles} />
-            </div>
-          </motion.h1>
-
-          <motion.p
-            className="max-w-xl text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 text-center mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-          >
-            Crafting beautiful web interfaces with React, Next.js, Tailwind CSS,
-            and beyond.
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col items-center gap-4 mt-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-          >
-            {/* Animated Available Badge */}
+          {/* Typewriter Section with Bounce and Gradient Ring */}
+          <div className="relative flex items-center justify-center">
+            {/* Gradient Ring */}
             <motion.div
-              className="mt-8 px-5 py-3 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 text-black dark:text-white rounded-full text-sm sm:text-base font-semibold shadow-lg hover:scale-105 transition"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="absolute w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-gradient-to-tr from-purple-400 via-pink-500 to-yellow-400 opacity-30 animate-spin-slow blur-3xl"
+            />
+
+            <motion.h1
+              className="text-4xl sm:text-6xl font-extrabold leading-tight mb-6 text-black dark:text-white overflow-hidden min-h-[3.5rem] sm:min-h-[4.5rem] z-10"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeInOut" }}
             >
-              Available for Freelance – Let’s Work Together!
-            </motion.div>
+              <div className="w-[280px] sm:w-[900px] mx-auto text-center whitespace-nowrap overflow-hidden">
+                <TypewriterText texts={titles} />
+              </div>
+            </motion.h1>
+          </div>
 
-            {/* 👨‍💻 Rotating Taglines */}
+<motion.p
+  className="max-w-2xl text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 text-center mx-auto backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 rounded-xl p-4 shadow-xl"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1, duration: 1 }}
+>
+  Hi, I’m <span className="font-semibold text-purple-600 dark:text-purple-400">Annu Kumari</span> — a self-driven indie hacker and creative technologist on a mission to build tools, products, and experiences that truly matter.  
+  <br className="hidden sm:block mt-2" />
+  <span className="inline-block mt-2">Designing exceptional web experiences with precision, passion, and powerful technologies.</span>
+</motion.p>
 
-            {/* Contact Me Button */}
-          </motion.div>
 
-          {/* Floating Tech Icons */}
+
+          {/* CTA Buttons */}
+<motion.div
+  className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-8"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 1.2, duration: 0.8 }}
+>
+  {/* View Work Button */}
+  <motion.button
+    className="relative px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-fuchsia-500 to-cyan-500 shadow-lg hover:shadow-fuchsia-500/50 overflow-hidden group transition-transform duration-300"
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <span className="relative z-10">View Work</span>
+    {/* Shine Effect */}
+    <span className="absolute left-[-75%] top-0 w-1/2 h-full bg-white opacity-20 transform skew-x-[-20deg] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
+  </motion.button>
+
+  {/* Contact Me Button */}
+  <motion.button
+    className="relative px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 shadow-lg hover:shadow-emerald-500/50 overflow-hidden group transition-transform duration-300"
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <span className="relative z-10">Contact Me</span>
+    {/* Shine Effect */}
+    <span className="absolute left-[-75%] top-0 w-1/2 h-full bg-white opacity-20 transform skew-x-[-20deg] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
+  </motion.button>
+</motion.div>
+
+
+          {/* Floating Tech Icons Section (Optional) */}
           <motion.div
             className="relative mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 z-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 1 }}
-          >
-          </motion.div>
+          ></motion.div>
 
-          {/* Spotlight Background */}
+          {/* Background Spotlight */}
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <div className="spotlight" />
           </div>
@@ -210,29 +205,25 @@ export default function Home() {
       </section>
 
       <BlobDivider flip fillColor="#000000" />
+
       <section className="w-full relative z-10 py-4 bg-black">
-        
         <Reveal>
           <Hero />
         </Reveal>
       </section>
 
-      {/* Other Sections */}
-       
-
-      <section className="w-full px-6 sm:px-12 lg:px-24  mt-12">
-        
+      <section className="w-full px-6 sm:px-12 lg:px-24 mt-12">
         <Reveal>
           <About />
         </Reveal>
       </section>
 
-      
       <section className="w-full relative z-10 py-4 mt-9 bg-black">
         <Reveal>
           <Projects />
         </Reveal>
       </section>
+
       <BlobDivider flip={false} fillColor="#000000" />
 
       <section className="w-full px-6 sm:px-12 lg:px-24 py-20">

@@ -161,60 +161,76 @@ const ProjectCard = ({
   onClick,
   i,
 }: Project) => (
-  <motion.div
-    className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33%-1.5rem)]"
-    custom={i}
-    variants={fadeUp}
-    initial="hidden"
-    onClick={onClick}
-    whileInView="visible"
-    viewport={{ once: true }}
+<motion.div
+  className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33%-1.5rem)]"
+  custom={i}
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  onClick={onClick}
+>
+  <Card
+    className="rounded-3xl overflow-hidden bg-white/20 dark:bg-zinc-900/30 backdrop-blur-xl shadow-md border border-zinc-200 dark:border-zinc-800 hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-in-out cursor-pointer h-full flex flex-col group"
   >
-   
-    <Card className="rounded-2xl overflow-hidden bg-white/30 dark:bg-zinc-900/30 backdrop-blur shadow-md border border-zinc-200 dark:border-zinc-800 hover:scale-[1.02] transition-transform h-full flex flex-col">
-      {/* Media: Show video or image */}
-      <div className="relative w-full h-48">
-        {video ? (
-          <video
-            src={video}
-            className="absolute inset-0 -top-6 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        ) : image ? (
-          <Image src={image} alt={title} fill className="object-cover" />
-        ) : null}
+    {/* Media Section */}
+    <div className="relative w-full h-52 overflow-hidden">
+      {video ? (
+        <video
+          src={video}
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      ) : image ? (
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+        />
+      ) : null}
+
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    </div>
+
+    {/* Card Content */}
+    <CardContent className="flex flex-col flex-grow p-5">
+      
+      {/* Title */}
+      <h3 className="text-xl sm:text-2xl font-bold mb-3 text-zinc-800 dark:text-zinc-100 transition-colors">
+        {title}
+      </h3>
+
+      {/* Tech Stack Badges */}
+      <div className="flex flex-wrap gap-2 mb-4">
+        {tech.split(',').map((t) => (
+          <span
+            key={t.trim()}
+            className="bg-purple-200 text-purple-800 dark:bg-zinc-700 dark:text-purple-300 text-xs sm:text-sm font-medium px-3 py-1 rounded-full"
+          >
+            {t.trim()}
+          </span>
+        ))}
       </div>
 
-      {/* Content */}
-      <CardContent className="flex flex-col flex-grow p-4">
-        <h3 className="text-xl font-semibold mb-2 text-zinc-800 dark:text-zinc-100">
-          {title}
-        </h3>
-         <div className="flex flex-wrap gap-2 mb-3">
-            {tech.split(',').map((t) => (
-              <span
-                key={t.trim()}
-                className="bg-purple-100 text-purple-800 dark:bg-gray-700 dark:text-gray-300 text-xs font-medium px-2.5 py-1 rounded-md"
-              >
-                {t.trim()}
-              </span>
-            ))}
-          </div>
-        <p className="text-sm text-zinc-700 dark:text-zinc-300 mb-4">
-          {description}
-        </p>
+      {/* Description */}
+      <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 mb-4 line-clamp-3 leading-relaxed">
+        {description}
+      </p>
 
-      
-
-        
+      {/* View Details CTA */}
+      <span className="mt-auto inline-flex items-center gap-1 text-purple-600 dark:text-purple-400 text-sm sm:text-base font-medium hover:underline group-hover:translate-x-1 transition-transform duration-300">
+        View Details →
+      </span>
+    </CardContent>
+  </Card>
+</motion.div>
 
 
-      </CardContent>
-    </Card>
-  </motion.div>
 );
 
 export default function ProjectsPage() {
@@ -222,54 +238,76 @@ export default function ProjectsPage() {
 const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
-    <main className="min-h-screen w-full py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 bg-grid-dark">
-      <Navbar />
-      <SectionTitle title="Full Stack Projects" />
+   <main className="min-h-screen w-full py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 bg-grid-dark">
+  
+  {/* Navbar */}
+  <Navbar />
 
-      <h3 className="text-2xl font-bold mb-4 text-center text-purple-600 dark:text-purple-400">
-        Available Projects
-      </h3>
-      <div className="flex flex-wrap gap-6 justify-center mb-16">
-        {projectsData.fullstack.available.map((p, i) => (
-          // <ProjectCard key={p.title} {...p} i={i} />
-                     <ProjectCard
-  key={p.title}
-  {...p}
-  i={i}
-  onClick={() => {
-    setSelectedProject(p);
-    setDrawerOpen(true);
-  }}
-/>
-        ))}
-      </div>
+  {/* Full Stack Projects Section */}
+  <section className="mb-24">
+    <SectionTitle title="Full Stack Projects" />
 
-      <SectionTitle title="Frontend Projects" />
-      <div className="flex flex-wrap gap-6 justify-center mb-16">
-        {projectsData.frontend.map((p, i) => (
-          <ProjectCard key={p.title} {...p} i={i} />
-        ))}
-      </div>
+    <h3 className="text-2xl font-bold mb-8 text-center text-purple-600 dark:text-purple-400">
+      Available Projects
+    </h3>
+    <div className="flex flex-wrap gap-6 justify-center">
+      {projectsData.fullstack.available.map((p, i) => (
+        <ProjectCard
+          key={p.title}
+          {...p}
+          i={i}
+          onClick={() => {
+            setSelectedProject(p);
+            setDrawerOpen(true);
+          }}
+        />
+      ))}
+    </div>
+  </section>
 
-      <h3 className="text-2xl font-bold mb-4 text-center text-gray-600 dark:text-gray-400">
-        Coming Soon
-      </h3>
-      <div className="flex flex-wrap gap-6 justify-center">
-        {projectsData.fullstack.comingSoon.map((p, i) => (
-          <ProjectCard key={p.title} {...p} i={i} />
-        ))}
-      </div>
-      
+  {/* Frontend Projects Section */}
+  <section className="mb-24">
+    <SectionTitle title="Frontend Projects" />
 
-      <ProjectDrawer
-  open={drawerOpen}
-  onOpenChange={(open) => {
-    setDrawerOpen(open);
-    if (!open) setSelectedProject(null);
-  }}
-  project={selectedProject}
-/>
-    </main>
+    <div className="flex flex-wrap gap-6 justify-center">
+      {projectsData.frontend.map((p, i) => (
+        <ProjectCard
+          key={p.title}
+          {...p}
+          i={i}
+          onClick={() => {
+            setSelectedProject(p);
+            setDrawerOpen(true);
+          }}
+        />
+      ))}
+    </div>
+  </section>
+
+  {/* Coming Soon Section */}
+  <section className="mb-24">
+    <h3 className="text-2xl font-bold mb-8 text-center text-gray-600 dark:text-gray-400">
+      Coming Soon
+    </h3>
+
+    <div className="flex flex-wrap gap-6 justify-center">
+      {projectsData.fullstack.comingSoon.map((p, i) => (
+        <ProjectCard key={p.title} {...p} i={i} />
+      ))}
+    </div>
+  </section>
+
+  {/* Drawer for Project Details */}
+  <ProjectDrawer
+    open={drawerOpen}
+    onOpenChange={(open) => {
+      setDrawerOpen(open);
+      if (!open) setSelectedProject(null);
+    }}
+    project={selectedProject}
+  />
+</main>
+
   );
 }
 

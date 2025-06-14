@@ -1,11 +1,12 @@
 "use client";
+
 import { useState, useEffect } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, Github, Twitter, Linkedin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
-// Navigation links
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
@@ -15,10 +16,12 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [isDark, setIsDark] = useState(true); // Default to dark
+  const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
-  // Apply dark mode on mount and when toggled
+  // Apply dark mode on mount and toggle
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add("dark");
@@ -27,12 +30,23 @@ export default function Navbar() {
     }
   }, [isDark]);
 
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 60 }}
-      className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 rounded-xl backdrop-blur-md bg-white/80 dark:bg-zinc-900/70 shadow-xl border border-zinc-200 dark:border-zinc-800 w-[95%] max-w-6xl"
+      className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 rounded-3xl backdrop-blur-lg bg-white/70 dark:bg-zinc-900/70 border border-white/40 dark:border-zinc-800 w-[80%] max-w-6xl transition-all ${
+        isScrolled ? "shadow-lg" : "shadow-none"
+      }`}
     >
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -45,7 +59,7 @@ export default function Navbar() {
             >
               <Image
                 src="/assets/logo.png"
-                alt="Codexio Logo"
+                alt="Projexio Logo"
                 width={40}
                 height={40}
                 className="w-full h-full object-cover"
@@ -62,28 +76,72 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map(({ href, label, target }) => (
-              <motion.a
-                key={label}
-                href={href}
-                target={target}
-                rel={target === "_blank" ? "noopener noreferrer" : undefined}
-                className="relative text-sm font-medium text-gray-700 dark:text-gray-300 group"
-                whileHover={{ scale: 1.1 }}
+          <div className="hidden md:flex space-x-8 items-center">
+            {navLinks.map(({ href, label, target }) => {
+              const isActive = pathname === href;
+              return (
+                <motion.a
+                  key={label}
+                  href={href}
+                  target={target}
+                  rel={target === "_blank" ? "noopener noreferrer" : undefined}
+                  className={`relative text-sm font-medium ${
+                    isActive ? "text-purple-500" : "text-gray-700 dark:text-gray-300"
+                  } group`}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <span className="group-hover:text-purple-500 transition-colors duration-300">
+                    {label}
+                  </span>
+                  <span
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-purple-500 transition-all duration-300 ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                </motion.a>
+              );
+            })}
+
+            {/* Social Icons - Desktop Only - Show After Scroll */}
+            {isScrolled && (
+              <motion.div
+                className="hidden md:flex space-x-4 ml-6"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ type: "spring", stiffness: 100 }}
               >
-                <span className="group-hover:text-purple-500 transition-colors duration-300">
-                  {label}
-                </span>
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-              </motion.a>
-            ))}
+                <Link
+                  href="https://github.com/annuk123"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors"
+                >
+                  <Github size={20} />
+                </Link>
+                <Link
+                  href="https://x.com/Annu66126617"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors"
+                >
+                  <Twitter size={20} />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/annu-kumari-540337237/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 dark:text-gray-300  hover:scale-110  transition-transform"
+                >
+                  <Linkedin size={20} />
+                </Link>
+              </motion.div>
+            )}
           </div>
 
           {/* Buttons */}
           <div className="flex items-center space-x-4">
             <motion.button
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.9, rotate: 180 }}
               onClick={() => setIsDark(!isDark)}
               className="p-2 rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-900 dark:text-white hover:scale-105 transition-all"
               aria-label="Toggle dark mode"
@@ -107,9 +165,10 @@ export default function Navbar() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ height: 0, opacity: 0, scale: 0.95 }}
+            animate={{ height: "auto", opacity: 1, scale: 1 }}
+            exit={{ height: 0, opacity: 0, scale: 0.95 }}
+            transition={{ type: "spring", damping: 20, stiffness: 150 }}
             className="md:hidden bg-white dark:bg-zinc-900 overflow-hidden border-t border-zinc-200 dark:border-zinc-800 rounded-b-xl"
           >
             <div className="flex flex-col items-center space-y-4 py-6">

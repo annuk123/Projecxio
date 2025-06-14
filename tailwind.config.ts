@@ -9,6 +9,8 @@ export default {
   ],
   theme: {
 extend: {
+
+  
     animation: {
       gradient: 'gradient 4s ease infinite',
     },

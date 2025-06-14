@@ -28,19 +28,17 @@ const About = () => {
     <section ref={ref} className="relative text-white overflow-hidden">
       <div className="min-h-[90vh] flex flex-col justify-center items-center px-6 sm:px-12 lg:px-24 text-center">
         <motion.main animate={controls} className="flex flex-col items-center justify-center">
-          <motion.h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              About Me
-            </span>
-            <span className="inline-block text-5xl animate-wiggle"> 👩‍💻</span>
-          </motion.h1>
 
-          <motion.p className="text-gray-400 dark:text-gray-300 max-w-2xl text-lg md:text-xl mt-6">
-            Hey, I&apos;m <strong>Annu Kumari</strong> — a passionate Full Stack Developer and Creative Technologist who thrives at the intersection of design and engineering. I specialize in crafting modern, scalable, and high-performance web applications that not only look stunning but work seamlessly.
+          <motion.p className="text-gray-400 dark:text-gray-300 max-w-2xl text-lg md:text-xl mt-6 leading-relaxed">
+            Hey, I&apos;m <strong>Annu Kumari</strong> — a passionate Indie Hacker and Full Stack Developer, building impactful tools, products, and digital experiences under <span className="text-pink-400 font-medium">Projecxio</span>.
             <br /><br />
-            With a strong foundation in frontend technologies and backend systems, I bring ideas to life — from elegant user interfaces to robust architecture. Whether you’re a startup looking to launch fast or a creator with a bold vision, I’m here to help you build digital experiences that resonate.
+            Projecxio isn&apos;t just a project — it&apos;s a playground for bold ideas, fast builds, and real-world solutions. I thrive on creating <span className="text-purple-400 font-medium">lean, scalable, and creator-friendly</span> products that empower developers, entrepreneurs, and indie hackers to launch faster and build smarter.
             <br /><br />
-            <span className="text-pink-400 font-medium">Let’s create something meaningful, beautiful, and impactful together.</span>
+            Whether it&apos;s a quick MVP, a developer tool, or a long-term product vision — I&apos;m on a mission to bring ideas to life with clarity, simplicity, and purpose.
+            <br />
+            <span className="text-pink-400 font-medium">
+              Let&apos;s build things that matter — fast, fun, and fearlessly.
+            </span>
           </motion.p>
         </motion.main>
       </div>
