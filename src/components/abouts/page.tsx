@@ -45,13 +45,13 @@ const About = () => {
   </motion.h2>
 
 <motion.p className="text-gray-400 dark:text-gray-300 max-w-2xl text-lg md:text-xl leading-relaxed">
-  <span className="text-pink-400 font-medium">Projecxio</span> is not just a portfolio — it’s a playground for bold ideas, rapid builds, and impactful digital experiences.
+  <span className="text-pink-400 font-medium">Projecxio</span> is not just a portfolio — it&apos;s a playground for bold ideas, rapid builds, and impactful digital experiences.
   <br /><br />
-  It’s where <span className="text-purple-400 font-medium">experiments turn into products</span>, where creators move fast, and where indie tools are designed to empower developers, entrepreneurs, and makers to build smarter, leaner, and faster.
+  It&apos;s where <span className="text-purple-400 font-medium">experiments turn into products</span>, where creators move fast, and where indie tools are designed to empower developers, entrepreneurs, and makers to build smarter, leaner, and faster.
   <br /><br />
-  Whether it's a developer utility, an interactive visualizer, or a launch-ready MVP — Projecxio is about <span className="text-pink-400 font-medium">building with purpose, precision, and passion.</span>
+  Whether it&apos;s a developer utility, an interactive visualizer, or a launch-ready MVP — Projecxio is about <span className="text-pink-400 font-medium">building with purpose, precision, and passion.</span>
   <br /><br />
-  Let’s build things that matter — <span className="text-purple-400 font-medium">fast, fearless, and future-ready.</span>
+  Let&apos;s build things that matter — <span className="text-purple-400 font-medium">fast, fearless, and future-ready.</span>
 </motion.p>
 
         </motion.main>
