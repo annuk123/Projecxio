@@ -25,8 +25,8 @@ import {
   SiVite,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
-import Projects from "@/components/projectsPage/project";
 import TypewriterText from "@/components/typewriter/TypeWriter";
+import ProductsPage from "@/components/productsPage/ProductsPage";
 
 const ICONS = [
   FaReact,
@@ -79,12 +79,8 @@ const titles = [
   "I'm a Open Source Ethusiast",
 ];
 
-
-
-
-
 export default function Home() {
-    const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -92,10 +88,12 @@ export default function Home() {
   });
 
   return (
-<div className="relative flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-white via-rose-50 to-violet-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 transition-colors duration-500 bg-grid-dark overflow-hidden">
-
+    <div className="relative flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-white via-rose-50 to-violet-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 transition-colors duration-500 bg-grid-dark overflow-hidden">
       {/* Scroll Progress Bar */}
-      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-purple-500 z-[1000] origin-left" style={{ scaleX }} />
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-purple-500 z-[1000] origin-left"
+        style={{ scaleX }}
+      />
 
       {/* Background Particles */}
       <FloatingIcon
@@ -111,7 +109,6 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="flex z-10 relative flex-col items-center justify-center text-center w-full px-6 sm:px-12 lg:px-24 py-30 min-h-screen">
-
         {/* Floating icons */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           {ICONS.map((Icon, i) => (
@@ -130,9 +127,7 @@ export default function Home() {
           {/* Typewriter Section with Bounce and Gradient Ring */}
           <div className="relative flex items-center justify-center">
             {/* Gradient Ring */}
-            <motion.div
-              className="absolute w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-gradient-to-tr from-purple-400 via-pink-500 to-yellow-400 opacity-30 animate-spin-slow blur-3xl"
-            />
+            <motion.div className="absolute w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-gradient-to-tr from-purple-400 via-pink-500 to-yellow-400 opacity-30 animate-spin-slow blur-3xl" />
 
             <motion.h1
               className="text-4xl sm:text-6xl font-extrabold leading-tight mb-6 text-black dark:text-white overflow-hidden min-h-[3.5rem] sm:min-h-[4.5rem] z-10"
@@ -146,48 +141,55 @@ export default function Home() {
             </motion.h1>
           </div>
 
-<motion.p
-  className="max-w-2xl text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 text-center mx-auto backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 rounded-xl p-4 shadow-xl"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 1, duration: 1 }}
->
-  Hi, I’m <span className="font-semibold text-purple-600 dark:text-purple-400">Annu Kumari</span> — <span className="font-semibold text-purple-600 dark:text-gray-400">a Full stack Developer(Next.js + Convex)</span> , self-driven indie hacker and creative technologist on a mission to build tools, products, and experiences that truly matter.  
-  <br className="hidden sm:block mt-2" />
-  <span className="inline-block mt-2">Designing exceptional web experiences with precision, passion, and powerful technologies.</span>
-</motion.p>
-
-
+          <motion.p
+            className="max-w-2xl text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 text-center mx-auto backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 rounded-xl p-4 shadow-xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            Hi, I’m{" "}
+            <span className="font-semibold text-purple-600 dark:text-purple-400">
+              Annu Kumari
+            </span>{" "}
+            —{" "}
+            <span className="font-semibold text-purple-600 dark:text-gray-400">
+              a Full stack Developer(Next.js + Convex)
+            </span>{" "}
+            , self-driven indie hacker and creative technologist on a mission to
+            build tools, products, and experiences that truly matter.
+            <br className="hidden sm:block mt-2" />
+            <span className="inline-block mt-2">
+              Designing exceptional web experiences with precision, passion, and
+              powerful technologies.
+            </span>
+          </motion.p>
 
           {/* CTA Buttons */}
-<motion.div
-  className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-8"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 1.2, duration: 0.8 }}
->
-  <Link 
-  href="/projects" 
-  className="relative px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-fuchsia-500 to-cyan-500 shadow-lg hover:shadow-fuchsia-500/50 overflow-hidden group transition-transform duration-300"
-  >
-    <span className="relative z-10">View Work</span>
-    {/* Shine Effect */}
-    <span className="absolute left-[-75%] top-0 w-1/2 h-full bg-white opacity-20 transform skew-x-[-20deg] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
-  </Link>
+          <motion.div
+            className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            <Link
+              href="/projects"
+              className="relative px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-fuchsia-500 to-cyan-500 shadow-lg hover:shadow-fuchsia-500/50 overflow-hidden group transition-transform duration-300"
+            >
+              <span className="relative z-10">View Work</span>
+              {/* Shine Effect */}
+              <span className="absolute left-[-75%] top-0 w-1/2 h-full bg-white opacity-20 transform skew-x-[-20deg] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
+            </Link>
 
-  {/* View Work Button */}
-  <Link 
-  href="/contact" 
-  className="relative px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 shadow-lg hover:shadow-emerald-500/50 overflow-hidden group transition-transform duration-300"
-  >
-    <span className="relative z-10">Contact Me</span>
-    {/* Shine Effect */}
-    <span className="absolute left-[-75%] top-0 w-1/2 h-full bg-white opacity-20 transform skew-x-[-20deg] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
-  </Link>
-
-
-</motion.div>
-
+            {/* View Work Button */}
+            <Link
+              href="/contact"
+              className="relative px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 shadow-lg hover:shadow-emerald-500/50 overflow-hidden group transition-transform duration-300"
+            >
+              <span className="relative z-10">Contact Me</span>
+              {/* Shine Effect */}
+              <span className="absolute left-[-75%] top-0 w-1/2 h-full bg-white opacity-20 transform skew-x-[-20deg] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
+            </Link>
+          </motion.div>
 
           {/* Floating Tech Icons Section (Optional) */}
           <motion.div
@@ -220,7 +222,7 @@ export default function Home() {
 
       <section className="w-full relative z-10 py-4 mt-9 bg-black">
         <Reveal>
-          <Projects />
+          <ProductsPage />
         </Reveal>
       </section>
 

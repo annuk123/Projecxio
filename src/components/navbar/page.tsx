@@ -9,10 +9,12 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { href: "/products", label: "Products" },
+  { href: "/gallery", label: "Gallery" },
+  // { href: "/css-playground", label: "CSS Playground" },
   { href: "https://myfirstblog123.hashnode.dev/", target: "_blank", label: "Blogs" },
   { href: "https://www.behance.net/annukumari40", target: "_blank", label: "Graphic Designs" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -114,7 +116,7 @@ export default function Navbar() {
                   href="https://github.com/annuk123"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-purple-500 hover:scale-110 transition-colors"
                 >
                   <Github size={20} />
                 </Link>
@@ -122,7 +124,7 @@ export default function Navbar() {
                   href="https://x.com/Annu66126617"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-purple-500 hover:scale-110 transition-colors"
                 >
                   <Twitter size={20} />
                 </Link>
