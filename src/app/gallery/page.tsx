@@ -273,15 +273,16 @@ const [hoveredImage, setHoveredImage] = useState<string | null>(null);
             </motion.div>
           ))}
 
-          {/* Footer */}
-          <FootDivider flip fillColor="#000000" />
+        </AnimatePresence>
+        
+      </motion.div>
+      {/* Footer */}
+        <FootDivider flip fillColor="#000000" />
           <footer className="w-full relative z-10 py-10 bg-black">
             <Reveal>
               <Footer />
             </Reveal>
           </footer>
-        </AnimatePresence>
-      </motion.div>
     </section>
   );
 }
