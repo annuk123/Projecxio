@@ -77,7 +77,7 @@ export default function ProductsPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 mt-2 sm:mt-0 rounded-full font-medium bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white shadow-md hover:shadow-fuchsia-500/40 transition-transform group"
               >
-                Read Full Blog
+                View All Products
                 <ExternalLink size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
       </motion.div>
