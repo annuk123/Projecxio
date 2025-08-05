@@ -163,6 +163,102 @@ const galleryItems = [
     category: "Travel",
     image: "https://res.cloudinary.com/dar54qs52/image/upload/v1751586634/WhatsApp_Image_2025-07-04_at_5.16.45_AM_xn3zpz.jpg",
   },
+  {
+    title: "GDG Cloud Kolkata Team Dinner Party 2025",
+    category: "Meetups",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353567/WhatsApp_Image_2025-08-05_at_5.46.24_AM_u2qscs.jpg",
+  },
+    {
+    title: "Team Dinner Party 2025",
+    category: "Meetups",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353577/WhatsApp_Image_2025-08-05_at_5.46.23_AM_aokury.jpg",
+  },
+  {
+    title: "CCD Cloud Kolkata Volunteer ID",
+    category: "Swags",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353558/WhatsApp_Image_2025-08-05_at_5.46.22_AM_saz99g.jpg",
+  },
+  {
+    title: "CCD Cloud Kolkata Volunteer prize",
+    category: "Wins",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353589/WhatsApp_Image_2025-08-05_at_5.46.22_AM_1_sax0d8.jpg",
+  },
+  {
+    title: "aam panna",
+    category: "Travel",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353612/WhatsApp_Image_2025-08-05_at_5.46.21_AM_fznrs4.jpg",
+  },
+    {
+    title: "Taj Taal kutir Kolkata",
+    category: "Travel",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353613/WhatsApp_Image_2025-08-05_at_5.46.20_AM_t2mycr.jpg",
+  },
+  {
+    title: "Amazing view of Taj Taal kutir Kolkata",
+    category: "Travel",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353613/WhatsApp_Image_2025-08-05_at_5.46.19_AM_mqhqlc.jpg",
+  },
+  {
+    title: "Taj Taal kutir",
+    category: "Travel",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353613/WhatsApp_Image_2025-08-05_at_5.46.18_AM_1_wechlj.jpg",
+  },
+  {
+    title: "CCD Cloud Kolkata Lunch",
+    category: "Travel",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353613/WhatsApp_Image_2025-08-05_at_5.46.16_AM_qu4urv.jpg",
+  },
+  {
+    title: "Eco Park Kolkata",
+    category: "Travel",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353614/WhatsApp_Image_2025-08-05_at_5.46.18_AM_mktj1e.jpg",
+  },
+
+  {
+    title: "Visit to Eco Park Kolkata",
+    category: "Travel",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353614/WhatsApp_Image_2025-08-05_at_5.46.17_AM_s8t0ix.jpg",
+  },
+  {
+    title: "Soup at CCD Cloud Kolkata",
+    category: "Travel",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353614/WhatsApp_Image_2025-08-05_at_5.46.15_AM_1_tancsk.jpg",
+  },
+  {
+    title: "Crowd at CCD Cloud Kolkata",
+    category: "Meetups",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353615/WhatsApp_Image_2025-08-05_at_5.46.15_AM_v3fkpi.jpg",
+  },
+  {
+    title: "Kolkata's weather mood",
+    category: "Nature",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353615/WhatsApp_Image_2025-08-05_at_5.46.14_AM_1_gwaen2.jpg",
+  },
+  {
+    title: "Statue",
+    category: "Aesthetics",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353631/WhatsApp_Image_2025-08-05_at_5.46.17_AM_1_kup3sd.jpg",
+  },
+  {
+    title: "All Volunteers of CCD Cloud Kolkata",
+    category: "Meetups",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353655/WhatsApp_Image_2025-08-05_at_5.46.14_AM_vrl8w1.jpg",
+  },
+  {
+    title: "CCD Cloud Kolkata",
+    category: "Events",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353659/WhatsApp_Image_2025-08-05_at_5.46.00_AM_dy0trr.jpg",
+  },
+  {
+    title: "CCD Cloud Kolkata Volunteers",
+    category: "Events",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353659/WhatsApp_Image_2025-08-05_at_5.46.06_AM_sjqk8e.jpg",
+  },
+  {
+    title: "Vibing with Appwrite keyboard, t-shirt, and cap",
+    category: "Gadgets",
+    image: "https://res.cloudinary.com/dar54qs52/image/upload/v1754353658/WhatsApp_Image_2025-08-05_at_5.45.57_AM_fckaqn.jpg",
+  }
 ];
 
 
