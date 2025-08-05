@@ -27,6 +27,7 @@ import {
 import { FaJava } from "react-icons/fa";
 import TypewriterText from "@/components/typewriter/TypeWriter";
 import ProductsPage from "@/components/productsPage/ProductsPage";
+import { CommunityTimeline } from "@/components/CommunityTimeline/CommunityTimeline";
 
 const ICONS = [
   FaReact,
@@ -225,8 +226,15 @@ export default function Home() {
           <ProductsPage />
         </Reveal>
       </section>
+     
 
       <BlobDivider flip={false} fillColor="#000000" />
+
+       <section className="w-full px-6 sm:px-12 lg:px-24 py-20">
+        <Reveal>
+          <CommunityTimeline />
+        </Reveal>
+      </section>
 
       <section className="w-full px-6 sm:px-12 lg:px-24 py-20">
         <Reveal>

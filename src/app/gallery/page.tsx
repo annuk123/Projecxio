@@ -245,7 +245,7 @@ const [hoveredImage, setHoveredImage] = useState<string | null>(null);
   initial={{ opacity: 0, y: 30 }}
   transition={{ duration: 0.5, ease: "easeOut" }}
   viewport={{ once: true }}
-  onClick={() => setHoveredImage(image)} // 👈 use click to open
+  onClick={() => setHoveredImage(image)} 
   className="cursor-zoom-in rounded-3xl overflow-hidden bg-white/10 border border-zinc-700 hover:shadow-pink-500/40 hover:shadow-md transition-all group backdrop-blur-md relative"
 >
 
