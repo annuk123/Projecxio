@@ -271,7 +271,7 @@ const [hoveredImage, setHoveredImage] = useState<string | null>(null);
       : galleryItems.filter((item) => item.category === activeTab);
 
   return (
-    <section className="min-h-screen px-6 sm:px-16 py-24 bg-black text-white relative z-0">
+    <section className="min-h-screen px-6 sm:px-16 py-24 dark:bg-black dark:text-white text-black relative z-0">
       <Navbar />
 
       {/* Section Heading */}
@@ -361,24 +361,17 @@ const [hoveredImage, setHoveredImage] = useState<string | null>(null);
 
               {/* Caption */}
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1 text-white">
+                <h3 className="text-lg font-semibold mb-1 dark:text-white">
                   {title}
                 </h3>
-                <p className="text-xs text-zinc-400">#{category}</p>
+                <p className="text-xs dark:text-zinc-400 text-zinc-500">#{category}</p>
               </div>
             </motion.div>
           ))}
 
         </AnimatePresence>
         
-      </motion.div>
-      {/* Footer */}
-        <FootDivider flip fillColor="#000000" />
-          <footer className="w-full relative z-10 py-10 bg-black">
-            <Reveal>
-              <Footer />
-            </Reveal>
-          </footer>
+      </motion.div>      
     </section>
   );
 }

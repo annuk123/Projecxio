@@ -84,7 +84,7 @@ export default function TechStack() {
                 <Tooltip.Trigger asChild>
                   <motion.div
                     variants={item}
-                    className="group bg-gradient-to-br from-black via-zinc-900/30 to-zinc-950 backdrop-blur-md border border-white/10 text-white/50 px-8 hover:rotate-[5deg] py-3 rounded-xl text-xs sm:text-sm font-medium hover:scale-105 text-center shadow hover:shadow-pink-500/20"
+                    className="group bg-white/50 backdrop-blur-md border border-white/10 text-black/50 px-8 hover:rotate-[5deg] py-3 rounded-xl text-xs sm:text-sm font-medium hover:scale-105 text-center shadow hover:shadow-pink-500/20"
                   >
                     <div className="flex flex-row items-center justify-center gap-1">
                       <div className="text-lg sm:text-2xl">{icon}</div>

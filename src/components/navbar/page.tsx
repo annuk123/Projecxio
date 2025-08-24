@@ -9,9 +9,8 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
+  { href: "/products", label: "Products", target: "_blank"},
   { href: "/gallery", label: "Gallery" },
-  // { href: "/css-playground", label: "CSS Playground" },
   { href: "https://myfirstblog123.hashnode.dev/", target: "_blank", label: "Blogs" },
   { href: "https://www.behance.net/annukumari40", target: "_blank", label: "Graphic Designs" },
   { href: "/contact", label: "Contact" },
@@ -139,6 +138,15 @@ export default function Navbar() {
               </motion.div>
             )}
           </div>
+          {/* Login Button */}
+            {/* <Link href="/login">
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                className="hidden md:inline-flex px-4 py-2 bg-purple-500 text-white rounded-md font-medium hover:bg-purple-600 hover:scale-105 transition-all"
+              >
+                Login
+              </motion.button>
+            </Link> */}
 
           {/* Buttons */}
           <div className="flex items-center space-x-4">
@@ -150,6 +158,8 @@ export default function Navbar() {
             >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </motion.button>
+
+            
 
             <motion.button
               whileTap={{ scale: 0.9 }}

@@ -51,7 +51,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-zinc-400 hover:text-white transition-colors"
+                className="text-zinc-400 hover:text-white transition-colors "
               >
                 <Icon className="h-5 w-5" />
               </motion.a>

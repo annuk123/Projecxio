@@ -74,7 +74,7 @@ export function CommunityTimeline() {
               >
                 {/* Content box */}
                 <div
-                  className={`bg-gray-900 border border-cyan-700/30 rounded-xl p-6 shadow-xl w-full md:w-[calc(50%-2rem)] 
+                  className={`dark:bg-gray-900 bg-white/40 border dark:border-cyan-700/30 rounded-xl p-6 shadow-xl w-full md:w-[calc(50%-2rem)] 
                   ${
                     isLeft
                       ? 'md:order-1 text-left'
@@ -82,8 +82,8 @@ export function CommunityTimeline() {
                   } hover:scale-[1.02] transition-transform duration-300`}
                 >
                   <h3 className="text-xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent tracking-tight mb-1">{item.title}</h3>
-                  <span className="text-sm text-gray-400">{item.date}</span>
-                  <p className="text-sm text-gray-300 mt-2">{item.description}</p>
+                  <span className="text-sm dark:text-gray-400 text-gray-500">{item.date}</span>
+                  <p className="text-sm dark:text-gray-300 text-gray-400 mt-2">{item.description}</p>
                 </div>
 
                 {/* Circle Dot */}
