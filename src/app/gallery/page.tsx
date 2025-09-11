@@ -4,9 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Navbar from "@/components/navbar/page";
-import Footer from "@/components/Footer/page";
-import Reveal from "@/components/reveal/reveal";
-import FootDivider from "@/components/footdiv/foot";
+
 
 const categories = ["All", "Wins", "Gadgets", "Events", "Swags", "Travel", "Meetups"];
 
